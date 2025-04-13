@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/county_details.css">
+  <title>Información de {{ country.name }}</title>
+</head>
+<body>
+  <header class="header">
+    <!-- Mostrar la bandera del país seleccionado -->
+    <div class="header__text">
+      <img class="header__flag" src="{{ url_for('static', filename='img/' + country.flag) }}" alt="{{ country.name }} flag">
+      <h1>{{ country.name }}</h1>
+      <p class="paragraph">Consulta y explora la huella de carbono de {{ country.name }}</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="country-info">
+      <h2>Información relevante de {{ country.name }}</h2>
+      <div class="country-details">
+        <p><strong>Emisiones de CO₂:</strong> {{ country.emissions }} toneladas</p>
+        <p><strong>Situación ambiental:</strong> Aquí va la información relevante sobre el país.</p>
+        <p><strong>Iniciativas de sostenibilidad:</strong> Detalles sobre proyectos y medidas ambientales en {{ country.name }}.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__team">
+      <p>Equipo de desarrollo:</p>
+      <ul class="team__list">
+        <li><a href="https://www.linkedin.com/in/ana-lucia-silva-cordoba/" target="_blank">Ana Lucía Silva Córdoba</a></li>
+        <li><a href="https://www.linkedin.com/in/miembro2" target="_blank">Mercedes</a></li>
+        <li><a href="https://www.linkedin.com/in/miembro3" target="_blank">Gerard</a></li>
+        <li><a href="https://www.linkedin.com/in/miembro4" target="_blank">Carina 4</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <title>Emisiones de CO₂ por país en Europa</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__text">
+      <h1>Emisiones de CO₂ por país en Europa</h1>
+      <p class="paragraph">Consulta y compara la huella de carbono de los países europeos</p>
+    </div>
+  </header>
+  <main>
+    <h2 class="main__title">Selecciona un país</h2>
+    <ul class="list">
+      {% for country in countries %}
+      <li class="list__item">
+        <a href="/country/{{ country.code }}">
+          <img class="item__img" src="{{ url_for('static', filename='img/' + country.flag) }}" alt="{{ country.name }}">
+          <div class="card__content">
+
+            <!-- Aquí va el nombre del país debajo de la bandera -->
+            <span class="country__name">{{ country.name }}</span>
+            <span class="country__co2">Emisiones: {{ country.emissions }} toneladas CO₂</span>
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </main>
+  <footer class="footer">
+    <div class="footer__team">
+      <p>Equipo de desarrollo:</p>
+      <ul class="team__list">
+        <li><a href="https://www.linkedin.com/in/ana-lucia-silva-cordoba/" target="_blank">Ana Lucía Silva Córdoba</a></li>
+        <li><a href="https://www.linkedin.com/in/miembro2" target="_blank">Mercedes</a></li>
+        <li><a href="https://www.linkedin.com/in/gerard-alarc%C3%B3n-montserrat-a0845735/" target="_blank">Gerard Alarcón Montserrat</a></li>
+        <li><a href="https://www.linkedin.com/in/miembro4" target="_blank">Carina 4</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 20px;
+    background-color: #fff;
+    color: #fff;
+}
+
+h1, h2, p {
+    margin: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    
+}
+
+.paragraph {
+    color: #b4d6a3;
+}
+
+h1 {
+    font-size: 2.8em;
+    line-height: 1.2;
+    olor: #fdfffc;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+.header {
+    background-image: url("../img/back.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: #356d0d;
+    padding: 25vh 30px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    opacity: 0.7;
+}
+
+.header__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: fit-content;
+    text-align: right;
+}
+
+main {
+    padding: 0 30px 100px;
+}
+
+.main__title {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.list__item a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 24px;
+    border: 1px solid #EB8028;
+    transition: 0.2s;
+}
+.item__img {
+    object-fit: contain;
+    width: 150px;
+}
+
+.list__item a:hover {
+    box-shadow: 1px 1px 4px 4px #7ac943;
+}
+
+.main__rez {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.rez__img {
+    object-fit: contain;
+    width: 300px;
+}
+
+.main__title--margin {
+    margin-bottom: 50px;
+}
+
+.list {
+    display: grid;  
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    list-style-type: none; 
+    padding: 0; 
+    
+  }
+  
+  
+  .list__item {
+    border: 1px solid #ccc; 
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center; 
+    background-color: #f9f9f9; 
+    
+  }
+  
+  .card__content {
+    margin-top: 10px;
+    justify-content: center;
+  }
+  
+  .item__img {
+    max-width: 100%; 
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .country__name {
+    font-weight: bold;
+    display: block;
+    color: #7ac943;
+  }
+  
+  .country__co2 {
+    color: #2b2a2a;
+    font-size: medium;
+    font-weight: bold;
+  }
+
+  .footer {
+    background-color: #7ac943;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer__team {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer__team p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.team__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.team__list li {
+    list-style: none;
+}
+
+.team__list a {
+    display: inline-block;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 14px;
+    border: 2px solid white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.team__list a:hover {
+    background-color: white;
+    color: #7ac943;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15vh 20px;
+        align-items: center;
+        background-position: center left;
+    }
+
+    .header__text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    footer__team p {
+        font-size: 1.2rem;
+    }
+
+    .team__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .team__list a {
+        font-size: 0.95rem;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+        h1 {
+            font-size: 3em;
+            text-align: center;
+        }
+    
+        h2 {
+            font-size: 1em;
+            text-align: center;
+        }
+    
+        p {
+            font-size: 0.5em;
+            text-align: center;
+        }
+    
+        .header__text {
+            max-width: 100%;
+            padding: 0 10px;
+        }
+}
