@@ -29,6 +29,11 @@ El proyecto combina metodologías cuantitativas (análisis de series temporales,
 ### Frontend:
 - **HTML/CSS** básico (Jinja2 templating en Flask)
 
+## 🎥 Demo del proyecto
+
+👉 [Haz clic aquí para ver el video](./static/img/demo.mp4)
+
+
 ### Infraestructura:
 - **Amazon Web Services (AWS)**: S3, Lambda, Redshift, Athena, EMR
 - **GitHub** para control de versiones
