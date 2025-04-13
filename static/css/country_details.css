@@ -41,6 +41,31 @@ h3 {
   font-size: 1em; 
 }
 
+.button__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.btn {
+  background-color: #356d0d; /* Verde suave */
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #5da22c;
+  cursor: pointer;
+}
+
+
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .header__flag {
@@ -76,8 +101,10 @@ h3 {
   }
 
   h3 {
-    font-size: 1em; 
+    font-size: 0.7em; 
     padding: 6px; 
   }
+
+  
 }
 }
