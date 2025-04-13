@@ -38,7 +38,7 @@ h3 {
   background-color: #356d0d;
   color: white;
   padding: 10px;
-  font-size: 1em; /* Ajustamos el tamaño de la fuente */
+  font-size: 1em; 
 }
 
 /* Responsive para móviles */
@@ -53,31 +53,31 @@ h3 {
   }
 
   .country-info h2 {
-    font-size: 1.5em; /* Reducir un poco el tamaño del título */
+    font-size: 1.5em; 
   }
 
   .country-details {
-    font-size: 1.1rem; /* Aumentar el tamaño del texto para hacerlo más legible */
+    font-size: 1.1rem;
   }
 
   h3 {
-    font-size: 0.6em; /* Reducir el tamaño del h3 para que no sea demasiado grande en móviles */
-    padding: 8px; /* Ajustar el padding */
-  }
+    font-size: 0.6em; 
+    padding: 8px; 
 }
 
-/* Asegurarnos que en pantallas muy pequeñas el texto sea legible */
+
 @media (max-width: 480px) {
   .country-info h2 {
-    font-size: 0.6em; /* Ajustar el tamaño del título en pantallas muy pequeñas */
+    font-size: 0.6em; 
   }
 
   .country-details {
-    font-size: 1rem; /* Asegurarse de que el texto sea legible en pantallas pequeñas */
+    font-size: 1rem; 
   }
 
   h3 {
-    font-size: 1em; /* Reducir aún más el tamaño de h3 en pantallas muy pequeñas */
-    padding: 6px; /* Ajustar padding para móviles muy pequeños */
+    font-size: 1em; 
+    padding: 6px; 
   }
+}
 }
