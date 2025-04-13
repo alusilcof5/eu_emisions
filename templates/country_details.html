@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/county_details.css">
+  <link rel="stylesheet" href="../static/css/country_details.css">
   <title>Información de {{ country.name }}</title>
 </head>
 <body>
   <header class="header">
-    <!-- Mostrar la bandera del país seleccionado -->
-    <div class="header__text">
-      <img class="header__flag" src="{{ url_for('static', filename='img/' + country.flag) }}" alt="{{ country.name }} flag">
+    <div class="header__text" style="align-items: center;">
+      <img class="header__flag" src="{{ url_for('static', filename='img/' + country.flag) }}" alt="Bandera de {{ country.name }}">
       <h1>{{ country.name }}</h1>
       <p class="paragraph">Consulta y explora la huella de carbono de {{ country.name }}</p>
     </div>
@@ -34,7 +33,7 @@
       <ul class="team__list">
         <li><a href="https://www.linkedin.com/in/ana-lucia-silva-cordoba/" target="_blank">Ana Lucía Silva Córdoba</a></li>
         <li><a href="https://www.linkedin.com/in/miembro2" target="_blank">Mercedes</a></li>
-        <li><a href="https://www.linkedin.com/in/miembro3" target="_blank">Gerard</a></li>
+        <li><a href="https://www.linkedin.com/in/gerard-alarc%C3%B3n-montserrat-a0845735/" target="_blank">Gerard Alarcón Montserrat</a></li>
         <li><a href="https://www.linkedin.com/in/miembro4" target="_blank">Carina 4</a></li>
       </ul>
     </div>
