@@ -31,12 +31,9 @@ El proyecto combina metodologías cuantitativas (análisis de series temporales,
 
 ## 🎥 Demo del proyecto
 
-👉 **Ver video demo**<br>
-<video src="https://user-images.githubusercontent.com/demo.mp4" controls width="600">
-  Tu navegador no soporta el video.
-</video>
-
-
+<p align="center">
+  <img src="static/img/video.gif" alt="Demo del proyecto" width="600"/>
+</p>
 
 ### Infraestructura:
 - **Amazon Web Services (AWS)**: S3, Lambda, Redshift, Athena, EMR
