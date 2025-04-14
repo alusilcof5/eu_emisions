@@ -31,8 +31,9 @@ El proyecto combina metodologías cuantitativas (análisis de series temporales,
 
 ## 🎥 Demo del proyecto
 
-👉 **Ver video demo**<br>
-[Haz clic aquí para ver el demo en video](static/img/demo.mp4)
+👉 **Ver video demo**
+[Haz clic aquí para ver el video](static/img/demo.mp4)
+
 
 
 
