@@ -1,0 +1,165 @@
+/* Estilos generales del contenedor principal (adaptado de .country-info) */
+.team-info {
+  padding: 0 0 30px 0; /* Sin padding arriba/lados, solo abajo antes del borde */
+  max-width: 900px;
+  margin: 40px auto 0; /* Margen arriba y abajo, centrado horizontalmente */
+  background-color: white; /* Fondo blanco como en la imagen */
+  border-radius: 18px; /* Bordes redondeados */
+  border: 1px solid #EB8028; /* Borde naranja */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Para que el h3 no se salga de los bordes redondeados */
+}
+
+/* Estilo para el título H3 (la barra verde superior) */
+.team-info h3 {
+  text-align: center;
+  background-color: #356d0d; /* Verde oscuro como en la imagen */
+  color: white;
+  padding: 15px 20px; /* Ajusta el padding para el tamaño deseado */
+  margin: 0; /* Quitamos márgenes por defecto del h3 */
+  font-size: 1.6em; /* Tamaño de fuente del título */
+  font-weight: bold;
+}
+
+/* Contenedor para todos los miembros - en fila */
+.team-members {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Estilo para cada miembro en modo tarjeta */
+.team-member {
+  background-color: #fdfdfd;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 42%; /* Aproximadamente 4 por fila */
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.team-member:hover {
+  transform: translateY(-4px);
+}
+
+
+/* Estilo para el nombre del miembro (si usas h4 como en el ejemplo) */
+.team-member h4 {
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 0.8em;
+}
+
+/* Estilo para los párrafos dentro de cada miembro */
+.team-member p {
+  font-size: 0.6rem; /* Tamaño de fuente del texto */
+  color: #2b2a2a;   /* Color del texto */
+  font-weight: 400; /* Peso normal para el texto */
+  line-height: 1.6;
+  margin-bottom: 5px; /* Pequeño espacio entre párrafos del mismo miembro */
+}
+
+.team-member p strong {
+  font-weight: 600; /* Hacemos el texto en negrita un poco más fuerte */
+  color: #1a1a1a;   /* Un poco más oscuro para el label */
+}
+
+
+/* Estilos del botón (los que ya tenías son buenos) */
+.button__container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Espacio entre el contenedor team-info y el botón */
+  margin-bottom: 40px; /* Espacio al final de la página */
+}
+
+.btn {
+  background-color: #356d0d; /* Verde oscuro */
+  color: #fdfdfd; /* Flecha negra */
+  padding: 10px 15px; /* Padding del botón */
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 2rem; /* Tamaño de la flecha */
+  line-height: 1; /* Para centrar mejor la flecha verticalmente */
+  display: inline-flex; /* Para alinear bien el contenido */
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.btn:hover {
+  background-color: #5da22c; /* Verde más claro al pasar el ratón */
+  cursor: pointer;
+}
+
+
+/* --- Responsive Design --- */
+
+/* Para Tablets y móviles grandes */
+@media (max-width: 768px) {
+  .team-info {
+    margin: 30px 15px 0; /* Menos margen lateral en pantallas pequeñas */
+    border-radius: 15px;
+  }
+
+  .team-info h3 {
+    font-size: 1.4em;
+    padding: 12px 15px;
+  }
+
+  .team-members {
+    padding: 20px 20px 10px 20px;
+    gap: 20px;
+     width: 45%; 
+  }
+
+  .team-member h4 {
+    font-size: 1.2em;
+  }
+
+  .team-member p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1.8rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Para móviles pequeños */
+@media (max-width: 480px) {
+  .team-info {
+    margin: 20px 10px 0;
+    border-radius: 12px;
+  }
+
+  .team-info h3 {
+    font-size: 1.2em;
+    padding: 10px 10px;
+  }
+
+   .team-members {
+    padding: 15px 15px 5px 15px;
+    gap: 15px;
+  }
+
+  .team-member h4 {
+    font-size: 1.1em;
+  }
+
+  .team-member p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+    padding: 6px 10px;
+  }
+}

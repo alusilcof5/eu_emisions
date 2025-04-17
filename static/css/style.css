@@ -7,7 +7,6 @@ body {
     font-size: 30px;
     line-height: 20px;
     background-color: #fff;
-    
 }
 
 h1, h2, p {
@@ -15,11 +14,7 @@ h1, h2, p {
     word-break: break-word;
     overflow-wrap: break-word;
     hyphens: auto;
-   
-    
 }
-
-
 
 h2 {
     font-size: 150px;
@@ -27,12 +22,11 @@ h2 {
 }
 
 h3 {
-    text-align: center; 
-    background-color: #356d0d; 
-    color: white; 
+    text-align: center;
+    background-color: #356d0d;
+    color: white;
     padding: 10px;
-  }
-  
+}
 
 .paragraph {
     color: #b4d6a3;
@@ -43,7 +37,6 @@ h3 {
 h1 {
     font-size: 2em;
     line-height: 1.2;
-  
 }
 
 ul {
@@ -75,6 +68,11 @@ ul {
     text-align: right;
 }
 
+.favicon img {
+    height: 50px; 
+    
+}
+
 main {
     padding: 0 30px 100px;
 }
@@ -82,95 +80,61 @@ main {
 .main__title {
     text-align: center;
     margin-bottom: 100px;
-    color: #fff
-    
+    color: #fff;
 }
 
-.list {
-    display: flex;
-    justify-content: space-around;
+a {
+    text-decoration: none; /* 🔥 Esto elimina subrayado globalmente */
 }
 
-.list__item a {
+a:visited {
     text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     color: inherit;
-    gap: 20px;
-    padding: 20px;
-    border-radius: 24px;
-    border: 1px solid #EB8028;
-    transition: 0.2s;
-}
-.item__img {
-    object-fit: contain;
-    width: 150px;
-}
-
-.list__item a:hover {
-    box-shadow: 1px 1px 4px 4px #7ac943;
-}
-
-.main__rez {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
-
-.rez__img {
-    object-fit: contain;
-    width: 300px;
-}
-
-.main__title--margin {
-    margin-bottom: 50px;
 }
 
 .list {
-    display: grid;  
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; 
-    list-style-type: none; 
-    padding: 0; 
-    
-  }
-  
-  
-  .list__item {
-    border: 1px solid #ccc; 
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.list__item {
+    border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
-    text-align: center; 
-    background-color: #f9f9f9; 
-    
-  }
-  
-  .card__content {
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.card__content {
     margin-top: 10px;
     justify-content: center;
-  }
-  
-  .item__img {
-    max-width: 100%; 
+    text-decoration: none;
+}
+
+.item__img {
+    max-width: 100%;
     height: auto;
     margin-bottom: 10px;
-  }
-  
-  .country__name {
+}
+
+.country__name {
     font-weight: bold;
     display: block;
     color: #7ac943;
-  }
-  
-  .country__co2 {
+    text-decoration: none;
+}
+
+.country__co2 {
     color: #2b2a2a;
     font-size: medium;
     font-weight: bold;
-  }
+    text-decoration: none;
+}
 
-  .footer {
+.footer {
     background-color: #356d0d;
     color: white;
     padding: 40px 20px;
@@ -192,7 +156,7 @@ main {
     margin-bottom: 20px;
 }
 
-.team__list {
+.legal {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -201,11 +165,11 @@ main {
     margin: 0;
 }
 
-.team__list li {
+.legal li {
     list-style: none;
 }
 
-.team__list a {
+.legal a {
     display: inline-block;
     color: white;
     font-size: 1rem;
@@ -221,6 +185,89 @@ main {
     background-color: white;
     color: #7ac943;
 }
+
+/* Navbar Styles (Responsive) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f4f4f4; /* Cambia según tu diseño */
+}
+
+.navbar__left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.favicon {
+    height: 100px; /* Ajusta según tu logo */
+}
+
+
+.navbar a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none; /* Hide by default on larger screens */
+    cursor: pointer;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+        nav ul {
+            display: none; 
+            flex-direction: column;
+            position: absolute;
+            top: 60px; 
+            left: 0;
+            width: 100%;
+            background-color: #333; 
+            text-align: center;
+        }
+    
+        nav li {
+            margin: 10px 0;
+        }
+    
+        nav a {
+            color: white;
+        }
+    
+        .menu-toggle {
+            display: block; 
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    
+        nav.active ul {
+            display: flex; 
+        }
+    }
+
 
 @media (max-width: 768px) {
     .header {
@@ -247,14 +294,14 @@ main {
     .footer__team p {
         font-size: 1.2rem;
     }
-    
-    .team__list {
+
+    .legan {
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    .team__list a {
+    .legal a {
         font-size: 0.95rem;
         padding: 10px 20px;
         width: 100%;
@@ -265,31 +312,24 @@ main {
         grid-template-columns: repeat(1, 1fr);
     }
 
-        h1 {
-            font-size: 1em;
-            text-align: center;
-            color: black;
-            opacity: 0;
-        }
-    
-        h2 {
-            font-size: 1em;
-            text-align: center;
-    
-        p {
-            font-size: 0.7em;
-            text-align: center;
-        }
-    
-        .header__text {
-            max-width: 100%;
-            padding: 0 10px;
-        }
+    h1 {
+        font-size: 1em;
+        text-align: center;
+        color: black;
+        opacity: 0;
+    }
 
-        .main__title {
-            font-size: x-large;
-            
-        }
+    p {
+        font-size: 0.7em;
+        text-align: center;
+    }
 
-}
+    .header__text {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .main__title {
+        font-size: x-large;
+    }
 }

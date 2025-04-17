@@ -1,0 +1,56 @@
+/* Contenedor general del contenido del proyecto */
+.project-content {
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    background-color: white;
+    border-radius: 18px;
+    border: 1px solid #EB8028;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Títulos principales */
+  .project-content h1,
+  .project-content h2,
+  .project-content h3 {
+    background-color: #356d0d;
+    color: white;
+    padding: 15px 20px;
+    margin-top: 30px;
+    border-radius: 12px 12px 0 0;
+    font-size: 1.6em;
+    font-weight: bold;
+  }
+  
+  /* Subtítulos y listas */
+  .project-content ul {
+    padding-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .project-content ul li {
+    font-size: 0.95rem;
+    color: #2b2a2a;
+    margin-bottom: 6px;
+    line-height: 1.6;
+  }
+  
+  /* Párrafos */
+  .project-content p {
+    font-size: 1rem;
+    color: #2b2a2a;
+    line-height: 1.8;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+  
+  /* Imágenes */
+  .project-img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  

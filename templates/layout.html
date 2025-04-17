@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}EU Emissions{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/country-details.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+
+
+
+
+</head>
+<body>
+    
+
+    <nav class="navbar">
+        <div class="navbar__right">
+            <img src="{{ url_for('static', filename='img/favicon.png') }}" alt="Logo" class="favicon" />
+        </div>
+
+        <div class="navbar__left">
+            <button class="menu-toggle">☰</button> 
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('about') }}">Sobre Nosotros</a></li>
+                <li><a href="{{ url_for('project') }}">Acerca del proyecto</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <header class="header">
+        <!-- LOGO A LA DERECHA -->
+        <div class="header__text">
+            <h1>Emisiones de CO₂ por país en Europa</h1>
+            <p class="paragraph">Consulta y compara la huella de carbono de los países europeos</p>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer__team">           
+            <ul class="legal">
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                            </ul>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
