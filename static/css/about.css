@@ -1,5 +1,6 @@
 /* Estilos generales del contenedor principal (adaptado de .country-info) */
 .team-info {
+
   padding: 0 0 30px 0; /* Sin padding arriba/lados, solo abajo antes del borde */
   max-width: 900px;
   margin: 40px auto 0; /* Margen arriba y abajo, centrado horizontalmente */
@@ -104,8 +105,12 @@
 /* Para Tablets y móviles grandes */
 @media (max-width: 768px) {
   .team-info {
-    margin: 30px 15px 0; /* Menos margen lateral en pantallas pequeñas */
+    margin: 5px 2px 2px 5px; /* Menos margen lateral en pantallas pequeñas */
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* <-- centra horizontalmente */
+    justify-content: center;
   }
 
   .team-info h3 {
@@ -114,9 +119,9 @@
   }
 
   .team-members {
-    padding: 20px 20px 10px 20px;
-    gap: 20px;
-     width: 45%; 
+    width: 90%; 
+    gap: 2rem;
+  
   }
 
   .team-member h4 {
@@ -148,10 +153,20 @@
    .team-members {
     padding: 15px 15px 5px 15px;
     gap: 15px;
+    justify-content: center;
+    
+  }
+
+  .team-member {
+    width: 90%; /* Aproximadamente 4 por fila */
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+   
   }
 
   .team-member h4 {
-    font-size: 1.1em;
+    font-size: 0.6em;
   }
 
   .team-member p {

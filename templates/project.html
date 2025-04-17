@@ -12,12 +12,12 @@
     </section>
 
     <section class="objectives">
-        <h2>Objetivo General</h2>
+        <h4>Objetivo General</h4>
         <p>
             Analizar, mediante una plataforma de análisis interactiva, la evolución de las emisiones de CO₂ en la UE y evaluar si los países están en camino de cumplir con sus compromisos climáticos para 2030 y 2050.
         </p>
 
-        <h3>Objetivos Específicos</h3>
+        <h5>Objetivos Específicos</h5>
         <ul>
             <li>Visualizar tendencias de emisiones en un dashboard interactivo.</li>
             <li>Implementar modelos predictivos para estimar emisiones futuras.</li>
@@ -27,7 +27,7 @@
     </section>
 
     <section class="architecture">
-        <h2>Arquitectura Tecnológica</h2>
+        <h5>Arquitectura Tecnológica</h5>
         <img src="{{ url_for('static', filename='img/data-architecture.png') }}" alt="Arquitectura del proyecto" class="project-img">
         <p>
             La arquitectura del proyecto está basada en servicios cloud, usando tecnologías como AWS S3, Redshift, Glue y SageMaker. Esto permite escalar fácilmente el procesamiento de datos, almacenar históricos, entrenar modelos predictivos y visualizar resultados en dashboards interactivos como Tableau o Amazon QuickSight.
@@ -35,7 +35,7 @@
     </section>
 
     <section class="team">
-        <h2>Equipo de Trabajo</h2>
+        <h4>Equipo de Trabajo</h4>
         <ul>
             <li><strong>Project Manager:</strong> Coordinación y planificación ágil (Scrum).</li>
             <li><strong>Ingeniero de Datos:</strong> Diseño de pipelines ETL y aseguramiento de calidad.</li>
@@ -46,18 +46,13 @@
     </section>
 
     <section class="impact">
-        <h2>Impacto Esperado</h2>
+        <h4>Impacto Esperado</h4>
         <p>
             Los resultados generarán evidencia útil para diseñar políticas más efectivas y sostenibles. Además, se fomentará la transparencia mediante dashboards interactivos que faciliten la comprensión de datos complejos a públicos técnicos y no técnicos.
         </p>
     </section>
-
-
-  <!-- Botón de regreso fuera de la sección principal -->
-  <div class="button__container">
-    <a href="/" class="btn" title="Volver">
-      ⬅ <!-- Código HTML para la flecha izquierda -->
-    </a>
-  </div>
 </main>
+<div class="button__container">
+    <a href="/" class="btn" title="Volver"> ⬅ </a>
+  </div>
 {% endblock %}
