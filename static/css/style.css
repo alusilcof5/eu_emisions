@@ -9,6 +9,8 @@ body {
     background-color: #fff;
 }
 
+
+
 h1, h2, p {
     margin: 0;
     word-break: break-word;
@@ -68,7 +70,7 @@ ul {
     text-align: right;
 }
 
-.favicon img {
+.logo img {
     height: 50px; 
     
 }
@@ -84,7 +86,7 @@ main {
 }
 
 a {
-    text-decoration: none; /* 🔥 Esto elimina subrayado globalmente */
+    text-decoration: none; 
 }
 
 a:visited {
@@ -107,6 +109,8 @@ a:visited {
     text-align: center;
     background-color: #f9f9f9;
 }
+
+
 
 .card__content {
     margin-top: 10px;
@@ -186,61 +190,81 @@ a:visited {
     color: #7ac943;
 }
 
-/* Navbar Styles (Responsive) */
+.logo {
+    height: 100px; 
+}
+
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; 
+    align-items: center; 
     padding: 1rem;
-    background-color: #f4f4f4; /* Cambia según tu diseño */
+    background-color: #f4f4f4; 
 }
 
 .navbar__left {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1rem; 
 }
 
 .nav-links {
-    display: none;
-    list-style: none;
-    padding: 0;
+    display: flex; 
+    list-style: none; 
     margin: 0;
-    gap: 1rem;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; 
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #f4f4f4;;
     font-weight: bold;
+    color: #333; 
+    padding: 5px 10px; 
 }
-.nav-links.active {
-    display: block;
-}
-
-.favicon {
-    height: 100px; 
-}
-
 
 .navbar a:hover {
-    background-color: #555;
-    color: white;
+    background-color: #555; 
+    color: white; 
 }
 
-/* Hamburger Menu */
+
 .menu-toggle {
-    display: none; /* Hide by default on larger screens */
+    display: none; 
     cursor: pointer;
     padding: 10px;
     background-color: transparent;
     border: none;
     font-size: 24px;
-}
+} 
 
-/* Responsive Navbar */
+.team-member__img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%; /* opcional, para dar forma circular */
+    object-fit: cover;   /* asegura que no se deforme la imagen */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* suave sombra */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team-member__img:hover {
+    transform: scale(1.05); /* efecto suave al pasar el ratón */
+  }
+  
+
+  
 @media (max-width: 768px) {
-        nav ul {
+    .team-member__img {
+        max-width: 180px;
+      }
+
+    nav ul {
             display: none; 
             flex-direction: column;
             position: absolute;
@@ -300,12 +324,14 @@ a:visited {
         a{
             color: #f4f4f4;
         }
-
+        .menu {
+            line-height: 1.6;
+        }
         
     }
 
 
-@media (max-width: 768px) {
+@media (max-width: 488px) {
     .header {
         padding: 15vh 20px;
         align-items: center;
@@ -368,4 +394,10 @@ a:visited {
     .main__title {
         font-size: x-large;
     }
+
+   
+        .team-member__img {
+          max-width: 140px;
+        }
+    
 }

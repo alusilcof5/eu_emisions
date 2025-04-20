@@ -1,22 +1,8 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <link rel="stylesheet" href="../static/css/country_details.css">
-  <title>Información de {{ country.name }}</title>
-</head>
-<body>
-  <header class="header">
-    <div class="header__text" style="align-items: center;">
-      <img class="header__flag" src="{{ url_for('static', filename='img/' + country.flag) }}" alt="Bandera de {{ country.name }}">
-      <h1>{{ country.name }}</h1>
-      <p class="paragraph">Consulta y explora la huella de carbono de {{ country.name }}</p>
-    </div>
-  </header>
+{% extends "layout.html" %}
 
-  <main>
+{% block title %}Sobre Nosotros{% endblock %}
+
+{% block content %}
     <section class="country-info">
       <h3>Información relevante de {{ country.name }}</h3>
       <div class="country-details">
@@ -28,21 +14,4 @@
       <!-- Botón de regreso -->
     </section>
   </main>
-  <div class="button__container">
-    <a href="/" class="btn" title="Volver">
-      &#11013;
-    </a>
-  </div>
-  <footer class="footer">
-    <div class="footer__team">
-      <p>Equipo de desarrollo:</p>
-      <ul class="team__list">
-        <li><a href="https://www.linkedin.com/in/ana-lucia-silva-cordoba/" target="_blank">Ana Lucía Silva Córdoba</a></li>
-        <li><a href="https://www.linkedin.com/in/" target="_blank">Mercedes Sánchez</a></li>
-        <li><a href="https://www.linkedin.com/in/gerard-alarc%C3%B3n-montserrat-a0845735/" target="_blank">Gerard Alarcón Montserrat</a></li>
-        <li><a href="https://www.linkedin.com/in/" target="_blank">Carina Jimenez</a></li>
-      </ul>
-    </div>
-  </footer>
-</body>
-</html>
+  {% endblock %}
