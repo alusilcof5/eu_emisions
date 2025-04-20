@@ -1,8 +1,7 @@
-/* Estilos generales del contenedor principal (adaptado de .country-info) */
 .team-info {
 
   padding: 30px;
-  max-width: 900px;
+  max-width: 90%;
   margin: 40px auto;
   background-color: white;
   border-radius: 18px;
@@ -10,19 +9,19 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo para el título H3 (la barra verde superior) */
+
 .team-info h3 {
   text-align: center;
-  background-color: #356d0d; /* Verde oscuro como en la imagen */
+  background-color: #356d0d; 
   color: white;
-  padding: 15px 20px; /* Ajusta el padding para el tamaño deseado */
-  margin: 0; /* Quitamos márgenes por defecto del h3 */
-  font-size: 1.6em; /* Tamaño de fuente del título */
+  padding: 15px 20px; 
+  margin: 0;
+  font-size: 1.6em; 
   font-weight: bold;
   line-height: 1.3;
 }
 
-/* Contenedor para todos los miembros - en fila */
+
 .team-members {
   padding: 30px;
   display: flex;
@@ -32,16 +31,18 @@
   gap: 20px;
 }
 
-/* Estilo para cada miembro en modo tarjeta */
 .team-member {
   background-color: #fdfdfd;
   border: 1px solid #ccc;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   padding: 20px;
-  width: 42%; /* Aproximadamente 4 por fila */
+  width: 45%; 
   box-sizing: border-box;
   transition: transform 0.2s ease;
+  text-align: justify;
+  hyphens: none;
+
 }
 
 .team-member:hover {
@@ -57,22 +58,23 @@
   
 }
 
-/* Estilo para los párrafos dentro de cada miembro */
 .team-member p {
-  font-size: 1rem; /* Tamaño de fuente del texto */
-  color: #2b2a2a;   /* Color del texto */
-  font-weight: 400; /* Peso normal para el texto */
+  font-size: 1rem; 
+  color: #2b2a2a;   
+  font-weight: 400; 
   line-height: 1.6;
-  margin-bottom: 5px; /* Pequeño espacio entre párrafos del mismo miembro */
+  margin-bottom: 5px; 
+  word-break: keep-all;
+  hyphens: none;
 }
 
 .team-member p strong {
-  font-weight: 600; /* Hacemos el texto en negrita un poco más fuerte */
-  color: #1a1a1a;   /* Un poco más oscuro para el label */
+  font-weight: 600px; 
+  color: #1a1a1a;   
 }
 
 
-/* Estilos del botón (los que ya tenías son buenos) */
+
 .button__container {
   display: flex;
   justify-content: center;
