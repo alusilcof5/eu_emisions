@@ -1,14 +1,13 @@
 /* Estilos generales del contenedor principal (adaptado de .country-info) */
 .team-info {
 
-  padding: 0 0 30px 0; /* Sin padding arriba/lados, solo abajo antes del borde */
+  padding: 30px;
   max-width: 900px;
-  margin: 40px auto 0; /* Margen arriba y abajo, centrado horizontalmente */
-  background-color: white; /* Fondo blanco como en la imagen */
-  border-radius: 18px; /* Bordes redondeados */
-  border: 1px solid #EB8028; /* Borde naranja */
+  margin: 40px auto;
+  background-color: white;
+  border-radius: 18px;
+  border: 1px solid #EB8028;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Para que el h3 no se salga de los bordes redondeados */
 }
 
 /* Estilo para el título H3 (la barra verde superior) */
@@ -20,6 +19,7 @@
   margin: 0; /* Quitamos márgenes por defecto del h3 */
   font-size: 1.6em; /* Tamaño de fuente del título */
   font-weight: bold;
+  line-height: 1.3;
 }
 
 /* Contenedor para todos los miembros - en fila */
@@ -106,7 +106,7 @@
 /* Para Tablets y móviles grandes */
 @media (max-width: 768px) {
   .team-info {
-    margin: 5px 2px 2px 5px; /* Menos margen lateral en pantallas pequeñas */
+    margin: 1px 1px 1px 1px; /* Menos margen lateral en pantallas pequeñas */
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -142,7 +142,7 @@
 /* Para móviles pequeños */
 @media (max-width: 480px) {
   .team-info {
-    margin: 20px 10px 0;
+    margin: 5px 5px 0;
     border-radius: 12px;
   }
 
@@ -152,14 +152,14 @@
   }
 
    .team-members {
-    padding: 15px 15px 5px 15px;
-    gap: 15px;
+    padding: 5px 5px 5px 5px;
+    gap: 20px;
     justify-content: center;
     
   }
 
   .team-member {
-    width: 90%; /* Aproximadamente 4 por fila */
+    width: 100%; 
     box-sizing: border-box;
     align-items: center;
     justify-content: center;
