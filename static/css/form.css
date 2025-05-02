@@ -27,8 +27,8 @@
     background: inherit;
     border-radius: 5px;
     width: 100%;
-    resize: vertical; /* permite redimensionar verticalmente si se desea */
-    font-family: inherit; /* mantiene coherencia con el resto del formulario */
+    resize: vertical;
+    font-family: inherit; 
     font-size: 14px;
     color: inherit;
 }
@@ -55,9 +55,14 @@ label {
     align-self: center;
     border: none;
     border-radius: 10px;
-    background: #0EB07C;
+    background: #356d0d;
     color: #fff;
 }
+
+.button:hover {
+    background-color: #5da22c; 
+    cursor: pointer;
+  }
 
 .thanks-container {
     display: flex;

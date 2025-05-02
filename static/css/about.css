@@ -49,8 +49,6 @@
   transform: translateY(-4px);
 }
 
-
-/* Estilo para el nombre del miembro (si usas h4 como en el ejemplo) */
 .team-member h4 {
   color: #333;
   margin-bottom: 8px;
@@ -78,41 +76,39 @@
 .button__container {
   display: flex;
   justify-content: center;
-  margin-top: 30px; /* Espacio entre el contenedor team-info y el botón */
-  margin-bottom: 40px; /* Espacio al final de la página */
+  margin-top: 30px; 
+  margin-bottom: 40px; 
 }
 
 .btn {
-  background-color: #356d0d; /* Verde oscuro */
-  color: #fdfdfd; /* Flecha negra */
-  padding: 10px 15px; /* Padding del botón */
+  background-color: #356d0d; 
+  color: #fdfdfd; 
+  padding: 10px 15px; 
   text-decoration: none;
   border: none;
   border-radius: 8px;
-  font-size: 2rem; /* Tamaño de la flecha */
-  line-height: 1; /* Para centrar mejor la flecha verticalmente */
-  display: inline-flex; /* Para alinear bien el contenido */
+  font-size: 2rem; 
+  line-height: 1; 
+  display: inline-flex; 
   align-items: center;
   justify-content: center;
   
 }
 
 .btn:hover {
-  background-color: #5da22c; /* Verde más claro al pasar el ratón */
+  background-color: #5da22c; 
   cursor: pointer;
 }
 
 
 /* --- Responsive Design --- */
-
-/* Para Tablets y móviles grandes */
 @media (max-width: 768px) {
   .team-info {
-    margin: 1px 1px 1px 1px; /* Menos margen lateral en pantallas pequeñas */
+    margin: 1px 1px 1px 1px; 
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* <-- centra horizontalmente */
+    align-items: center;
     justify-content: center;
   }
 
