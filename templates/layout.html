@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/country_details.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+    <link rel="stylesheet" href="../static/css/form.css"> 
+
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
 
@@ -19,8 +21,10 @@
 
     <nav class="navbar">
         <div class="navbar__right">
-            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo" />
-        </div>
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/favicon.png') }}" alt="Inicio" style="height: 70px;">
+              </a>
+                      </div>
 
         <div class="navbar__left">
             <button class="menu-toggle">☰</button> 
@@ -28,6 +32,9 @@
                 <li><a href="{{ url_for('index') }}" class="menu">Inicio</a></li>
                 <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
                 <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
+                <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
+                
+                
             </ul>
         </div>
         
