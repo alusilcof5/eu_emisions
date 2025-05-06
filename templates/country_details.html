@@ -1,18 +1,28 @@
 {% extends "layout.html" %}
 
-{% block title %}countries details{% endblock %}
+{% block title %}Detalles del País{% endblock %}
 {% block header_subtitle %}Conoce los detalles de cada país{% endblock %}
 
 {% block content %}
     <section class="country-info">
       <h3>Información relevante de {{ country.name }}</h3>
       <div class="country-details">
-        <p><strong>Emisiones de CO₂:</strong> {{ country.emissions }} toneladas</p>
+        <p><strong>Emisiones de CO₂:</strong> {{ country.emissions|round(2) }} toneladas</p>
         <p><strong>Situación ambiental:</strong> Aquí va la información relevante sobre el país.</p>
         <p><strong>Iniciativas de sostenibilidad:</strong> Detalles sobre proyectos y medidas ambientales en {{ country.name }}.</p>
       </div>
 
+      <!-- Si existe la gráfica, mostrarla -->
+      {% if img_path %}
+        <div class="country-chart">
+          <h4>Gráfica de emisiones de CO₂</h4>
+          <img src="{{ url_for('static', filename='img/' ~ img_path) }}" alt="Gráfica CO₂ de {{ country.name }}">
+        </div>
+      {% else %}
+        <p>No se pudo generar la gráfica.</p>
+      {% endif %}
+
       <!-- Botón de regreso -->
+      <a href="{{ url_for('index') }}">Volver a la lista de países</a>
     </section>
-  </main>
-  {% endblock %}
+{% endblock %}
