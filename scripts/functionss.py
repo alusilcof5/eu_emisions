@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 
 # Ruta al archivo CSV
-CSV_PATH = '/home/factoriaf5/Escritorio/eu_emisions/static/package/co2_emissions_kt_by_country.csv'
+CSV_PATH = 'eu_emisions/static/package/data_world_countries.csv'
 
 # Directorio para guardar las gráficas
 IMG_DIR = 'static/img'
