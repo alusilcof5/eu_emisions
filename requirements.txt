@@ -2,4 +2,5 @@
 flask==2.3.3
 gunicorn==21.2.0
 pandas==2.2.2
-numpy==1.26.4  # Dependencia de pandas
+numpy==1.26.4  
+matplotlib==3.8.4
