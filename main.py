@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  
 
 # Ruta al archivo CSV
-CSV_PATH = 'eu_emisions/static/package/data_world_countries.csv'
+CSV_PATH = 'static/package/data_world_countries.csv'
 
 # Cargar el CSV una vez al iniciar la aplicación
 try:

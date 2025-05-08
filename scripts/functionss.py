@@ -3,11 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 
-# Ruta al archivo CSV
-CSV_PATH = 'eu_emisions/static/package/data_world_countries.csv'
+file_path = os.path.join("static", "package", "data_world_countries.csv")
 
-# Directorio para guardar las gráficas
-IMG_DIR = 'static/img'
+df = pd.read_csv(file_path)
+print(df.head())
+
+IMG_DIR = 'static/img/graph'
 
 def zonas():
     zonas_geograficas = ['Africa Eastern and Southern', 'Africa Western and Central', 'Arab World', 

@@ -16,7 +16,7 @@
       {% if img_path %}
         <div class="country-chart">
           <h4>Gráfica de emisiones de CO₂</h4>
-          <img src="{{ url_for('static', filename='img/' ~ img_path) }}" alt="Gráfica CO₂ de {{ country.name }}">
+          <img src="{{ url_for('static', filename='img/graph/' ~ img_path) }}" alt="Gráfica CO₂ de {{ country.name }}">
         </div>
       {% else %}
         <p>No se pudo generar la gráfica.</p>
