@@ -3,7 +3,6 @@
   { "code": "fr", "name": "France", "emissions": 454.6, "flag": "flag_fr.png" },
   { "code": "es", "name": "Spain", "emissions": 286.3, "flag": "flag_es.png" },
   { "code": "it", "name": "Italy", "emissions": 395.7, "flag": "flag_it.png" },
-  { "code": "gb", "name": "United Kingdom", "emissions": 432.5, "flag": "flag_bg.png" },
   { "code": "pl", "name": "Poland", "emissions": 319.4, "flag": "flag_pl.png" },
   { "code": "nl", "name": "Netherlands", "emissions": 165.3, "flag": "flag_nl.png" },
   { "code": "be", "name": "Belgium", "emissions": 130.2, "flag": "flag_be.png" },

@@ -100,6 +100,21 @@
   cursor: pointer;
 }
 
+.linkedin-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.linkedin-link {
+  color: #0A66C2; /* color oficial de LinkedIn */
+  text-decoration: none;
+}
+
+.linkedin-link:hover {
+  color: #004182;
+}
+
+
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
