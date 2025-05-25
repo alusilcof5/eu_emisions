@@ -17,7 +17,7 @@
     width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
 }
 
 .user input,
@@ -98,7 +98,7 @@ label {
     }
 
     .button {
-        width: 80%;
+        width: 30%;
     }
 
     .thanks-container h1 {
@@ -113,11 +113,11 @@ label {
 @media screen and (max-width: 480px) {
     .user-info,
     .address-date {
-        width: 100%;
+        width: 80%;
     }
 
     .button {
-        width: 100%;
+        width: 50%;
     }
 
     .thanks-container h1 {

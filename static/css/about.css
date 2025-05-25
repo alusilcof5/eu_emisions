@@ -76,8 +76,8 @@
 .button__container {
   display: flex;
   justify-content: center;
-  margin-top: 30px; 
-  margin-bottom: 40px; 
+  margin-top: 10px; 
+  margin-bottom: 5px; 
 }
 
 .btn {
@@ -140,6 +140,7 @@
 
   .team-member h4 {
     font-size: 1.2em;
+    text-align: center;
   }
 
   .team-member p {
@@ -148,7 +149,7 @@
 
   .btn {
     font-size: 1.8rem;
-    padding: 8px 12px;
+    padding: 5px 8px;
   }
 }
 

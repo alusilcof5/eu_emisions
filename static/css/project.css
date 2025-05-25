@@ -11,13 +11,14 @@
   .project-content h3,
   .project-content h4,
   .project-content h5 {
+    font-family: 'Montserrat', sans-serif;
     background-color: #356d0d;
     color: white;
     padding: 15px 20px;
     margin-top: 30px;
     border-radius: 12px 12px 0 0;
     font-weight: bold;
-    line-height: 1.3;
+    line-height: 1.2rem;
   }
   
   /* Subtítulos y listas */
@@ -25,21 +26,25 @@
     padding-left: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
   }
   
   .project-content ul li {
-    font-size: 0.95rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
     color: #2b2a2a;
     margin-bottom: 6px;
     line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
   }
   
   /* Párrafos */
   .project-content p {
-    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
     color: #2b2a2a;
     margin-bottom: 16px;
-    line-height: 1.2; 
+    line-height: 1.5; 
   }
   
   /* Imágenes */
@@ -80,13 +85,13 @@
     .project-content h3,
     .project-content h4,
     .project-content h5 {
-      font-size: 1.3em;
+      font-size: 1.3rem;
       padding: 12px 15px;
     }
   
     .project-content p,
     .project-content ul li {
-      font-size: 0.95rem;
+      font-size: 1.3rem;
     }
   
     .project-img {
@@ -110,7 +115,7 @@
   
     .project-content p,
     .project-content ul li {
-      font-size: 0.9rem;
+      font-size: 0.6rem;
       line-height: 1.6;
     }
   

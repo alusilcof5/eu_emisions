@@ -33,24 +33,39 @@
   font-weight: 500;
 }
 
+.country-chart {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.country-chart img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 h3 {
   text-align: center;
   background-color: #356d0d;
   color: white;
   padding: 10px;
-  font-size: 1em; 
+  font-size: 1em;
 }
 
 .button__container {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 10px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .btn {
-  background-color: #356d0d; /* Verde suave */
+  
+  background-color: #356d0d;
   color: white;
-  padding: 12px 24px;
+  padding: 5px 10px;
   text-decoration: none;
   border: none;
   border-radius: 8px;
@@ -58,6 +73,7 @@ h3 {
   font-weight: bold;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
+ 
 }
 
 .btn:hover {
@@ -65,8 +81,7 @@ h3 {
   cursor: pointer;
 }
 
-
-/* Responsive para móviles */
+/* Responsive: tablets y móviles */
 @media (max-width: 768px) {
   .header__flag {
     width: 80px;
@@ -78,33 +93,51 @@ h3 {
   }
 
   .country-info h2 {
-    font-size: 1.5em; 
+    font-size: 1.5em;
   }
 
   .country-details {
     font-size: 1.1rem;
   }
 
+  .country-chart img {
+    width: 100%;
+    max-width: 100%;
+  }
+
   h3 {
-    font-size: 0.6em; 
-    padding: 8px; 
+    font-size: 0.5rem;
+    padding: 8px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.5rem;
+  }
+  
 }
 
-
+/* Responsive: móviles pequeños */
 @media (max-width: 480px) {
   .country-info h2 {
-    font-size: 0.6em; 
+    font-size: 1.2em;
   }
 
   .country-details {
-    font-size: 1rem; 
+    font-size: 1rem;
+  }
+
+  .country-chart img {
+    width: 100%;
+    height: auto;
   }
 
   h3 {
-    font-size: 0.7em; 
-    padding: 6px; 
+    font-size: 0.6em;
+    padding: 5%;
   }
 
-  
-}
+
 }

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}Detalles del País{% endblock %}
-{% block header_subtitle %}Conoce los detalles de cada país{% endblock %}
+{% block header_subtitle %}Descubre el compromiso ambiental de los países del Pacto Verde{% endblock %}
 
 {% block content %}
     <section class="country-info">
@@ -15,7 +15,7 @@
       <!-- Si existe la gráfica, mostrarla -->
       {% if img_path %}
         <div class="country-chart">
-          <h4>Gráfica de emisiones de CO₂</h4>
+          <h6>Gráfica de emisiones de CO₂</h6>
           <img src="{{ url_for('static', filename='img/graph/' ~ img_path) }}" alt="Gráfica CO₂ de {{ country.name }}">
         </div>
       {% else %}
