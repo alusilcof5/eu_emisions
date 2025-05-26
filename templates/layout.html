@@ -33,9 +33,13 @@
                 <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
                 <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
                 <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
-                
-                
             </ul>
+
+            <div style="text-align: right; margin-right: 1rem; margin-top: 0.5rem;">
+                <button id="theme-toggle">
+                  <i class="fas fa-moon"></i>
+                </button>
+              </div>
         </div>
         
     </nav>
@@ -44,7 +48,6 @@
         <div class="header__text">
             <h1>{% block header_title %}Emisiones de CO₂{% endblock %}</h1>
             <p class="paragraph">{% block header_subtitle %}Consulta y compara la huella de carbono{% endblock %}</p>
-                    
         </div>
     </header>
     <main>
@@ -59,7 +62,29 @@
                             </ul>
         </div>
     </footer>
+    <!-- Modal Política de Privacidad -->
+<div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="privacyModal">&times;</span>
+      <h5>Política de Privacidad</h5>
+      <p class="paragraph">En EU Emissions valoramos tu privacidad. Los datos recopilados mediante formularios se utilizan únicamente para responder consultas y no se comparten con terceros.</p>
+      <p class="paragraph">Este sitio no utiliza cookies con fines publicitarios ni realiza seguimiento externo. Toda la información proporcionada será tratada de acuerdo con el Reglamento General de Protección de Datos (GDPR) de la UE.</p>
+      <p class="paragraph">Para más información, puedes contactarnos desde el formulario de contacto.</p>
+    </div>
+  </div>
+  
+  <!-- Modal Términos y Condiciones -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="termsModal">&times;</span>
+      <h5>Términos y Condiciones</h5>
+      <p class="paragraph">El sitio web EU Emissions ofrece información educativa basada en datos públicos sobre las emisiones de CO₂ en la Unión Europea.</p>
+      <p class="paragraph">El uso de esta información es responsabilidad del usuario. No garantizamos la precisión absoluta ni el uso que terceros puedan dar a los datos expuestos.</p>
+      <p class="paragraph">El contenido no debe ser reutilizado con fines comerciales sin autorización expresa.</p>
+    </div>
+  </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
 
 
 </body>

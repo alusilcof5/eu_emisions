@@ -1,26 +1,23 @@
 .team-info {
-
   padding: 30px;
   max-width: 90%;
   margin: 40px auto;
   background-color: white;
   border-radius: 18px;
-  border: 1px solid #EB8028;
+  border: 1px solid #5a9e37;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-
 .team-info h3 {
   text-align: center;
-  background-color: #356d0d; 
+  background-color: #356d0d;
   color: white;
-  padding: 15px 20px; 
+  padding: 15px 20px;
   margin: 0;
-  font-size: 1.6em; 
+  font-size: 1.6em;
   font-weight: bold;
   line-height: 1.3;
 }
-
 
 .team-members {
   padding: 30px;
@@ -37,12 +34,11 @@
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   padding: 20px;
-  width: 45%; 
+  width: 45%;
   box-sizing: border-box;
   transition: transform 0.2s ease;
   text-align: justify;
   hyphens: none;
-
 }
 
 .team-member:hover {
@@ -53,50 +49,46 @@
   color: #333;
   margin-bottom: 8px;
   line-height: 1.3;
-  
 }
 
 .team-member p {
-  font-size: 1rem; 
-  color: #2b2a2a;   
-  font-weight: 400; 
+  font-size: 1rem;
+  color: #2b2a2a;
+  font-weight: 400;
   line-height: 1.6;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
   word-break: keep-all;
   hyphens: none;
 }
 
 .team-member p strong {
-  font-weight: 600px; 
-  color: #1a1a1a;   
+  font-weight: 600;
+  color: #1a1a1a;
 }
-
-
 
 .button__container {
   display: flex;
   justify-content: center;
-  margin-top: 10px; 
-  margin-bottom: 5px; 
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .btn {
-  background-color: #356d0d; 
-  color: #fdfdfd; 
-  padding: 10px 15px; 
+  background-color: #356d0d;
+  color: #fdfdfd;
+  padding: 10px 15px;
   text-decoration: none;
   border: none;
   border-radius: 8px;
-  font-size: 2rem; 
-  line-height: 1; 
-  display: inline-flex; 
+  font-size: 2rem;
+  line-height: 1;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .btn:hover {
-  background-color: #5da22c; 
+  background-color: #5da22c;
   cursor: pointer;
 }
 
@@ -106,7 +98,7 @@
 }
 
 .linkedin-link {
-  color: #0A66C2; /* color oficial de LinkedIn */
+  color: #0A66C2;
   text-decoration: none;
 }
 
@@ -114,12 +106,49 @@
   color: #004182;
 }
 
+/* --- MODO OSCURO --- */
+body.dark-mode .team-info {
+  background-color: #1e1e1e;
+  border: 1px solid #5a9e37;
+  color: #f0f0f0;
+}
 
+body.dark-mode .team-info h3 {
+  background-color: #5a9e37;
+  color: white;
+}
+
+body.dark-mode .team-member {
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .team-member h4 {
+  color: #f1f1f1;
+}
+
+body.dark-mode .team-member p {
+  color: #ddd;
+}
+
+body.dark-mode .team-member p strong {
+  color: #fff;
+}
+
+body.dark-mode .btn {
+  background-color: #76c043;
+  color: #111;
+}
+
+body.dark-mode .btn:hover {
+  background-color: #8bd45e;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
   .team-info {
-    margin: 1px 1px 1px 1px; 
+    margin: 1px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -133,9 +162,8 @@
   }
 
   .team-members {
-    width: 90%; 
+    width: 90%;
     gap: 2rem;
-  
   }
 
   .team-member h4 {
@@ -153,7 +181,6 @@
   }
 }
 
-/* Para móviles pequeños */
 @media (max-width: 480px) {
   .team-info {
     margin: 5px 5px 0;
@@ -162,22 +189,18 @@
 
   .team-info h3 {
     font-size: 1.2em;
-    padding: 10px 10px;
+    padding: 10px;
   }
 
-   .team-members {
-    padding: 5px 5px 5px 5px;
+  .team-members {
+    padding: 5px;
     gap: 20px;
     justify-content: center;
-    
   }
 
   .team-member {
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
-    align-items: center;
-    justify-content: center;
-   
   }
 
   .team-member h4 {
