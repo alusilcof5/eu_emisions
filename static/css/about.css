@@ -1,5 +1,5 @@
 .team-info {
-  padding: 30px;
+  padding: 20px;
   max-width: 90%;
   margin: 40px auto;
   background-color: white;
@@ -30,11 +30,11 @@
 
 .team-member {
   background-color: #fdfdfd;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   padding: 20px;
-  width: 45%;
+  width: 46%;
   box-sizing: border-box;
   transition: transform 0.2s ease;
   text-align: justify;
@@ -108,7 +108,7 @@
 
 /* --- MODO OSCURO --- */
 body.dark-mode .team-info {
-  background-color: #1e1e1e;
+  background-color: #2c2c2c;
   border: 1px solid #5a9e37;
   color: #f0f0f0;
 }
@@ -162,7 +162,7 @@ body.dark-mode .btn:hover {
   }
 
   .team-members {
-    width: 90%;
+    width: 95%;
     gap: 2rem;
   }
 

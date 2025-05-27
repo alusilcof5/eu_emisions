@@ -33,13 +33,12 @@
                 <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
                 <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
                 <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
+            <li><button id="theme-toggle">
+                  <i class="fas fa-moon"></i>
+                </button></li>
+              </div>
             </ul>
 
-            <div style="text-align: right; margin-right: 1rem; margin-top: 0.5rem;">
-                <button id="theme-toggle">
-                  <i class="fas fa-moon"></i>
-                </button>
-              </div>
         </div>
         
     </nav>
@@ -65,7 +64,7 @@
     <!-- Modal Política de Privacidad -->
 <div id="privacyModal" class="modal">
     <div class="modal-content">
-      <span class="close" data-modal="privacyModal">&times;</span>
+      <span class="close" data-modal="privacyModal"></span>
       <h5>Política de Privacidad</h5>
       <p class="paragraph">En EU Emissions valoramos tu privacidad. Los datos recopilados mediante formularios se utilizan únicamente para responder consultas y no se comparten con terceros.</p>
       <p class="paragraph">Este sitio no utiliza cookies con fines publicitarios ni realiza seguimiento externo. Toda la información proporcionada será tratada de acuerdo con el Reglamento General de Protección de Datos (GDPR) de la UE.</p>
