@@ -166,3 +166,27 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCloseButtons();
   setupOutsideClickToClose();
 });
+
+// Función para abrir los modales
+        document.getElementById('openPrivacyModal').onclick = function() {
+            document.getElementById('privacyModal').style.display = 'block';
+        }
+        document.getElementById('openTermsModal').onclick = function() {
+            document.getElementById('termsModal').style.display = 'block';
+        }
+        // Cerrar los modales
+        var closeButtons = document.querySelectorAll('.close');
+        closeButtons.forEach(function(button) {
+            button.onclick = function() {
+                var modal = document.getElementById(button.getAttribute('data-modal'));
+                modal.style.display = 'none';
+            }
+        });
+        // Cerrar el modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+
+

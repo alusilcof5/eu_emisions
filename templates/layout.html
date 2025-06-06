@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}EU Emissions{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/country_details.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
@@ -46,8 +47,8 @@
         <!-- LOGO A LA DERECHA -->
         <div class="header__text">
             <h1>{% block header_title %}Emisiones de CO₂{% endblock %}</h1>
-            <p class="paragraph">{% block header_subtitle %}Consulta y compara la huella de carbono{% endblock %}</p>
         </div>
+        <div><p class="paragraph">{% block header_subtitle %}Consulta y compara la huella de carbono{% endblock %}</p></div>
     </header>
     <main>
         {% block content %}{% endblock %}
@@ -62,10 +63,11 @@
         </div>
     </footer>
     <!-- Modal Política de Privacidad -->
+<!-- Modal Política de Privacidad -->
 <div id="privacyModal" class="modal">
-    <div class="modal-content">
-      <span class="close" data-modal="privacyModal"></span>
-      <h5>Política de Privacidad</h5>
+  <div class="modal-content">
+    <span class="close" data-modal="privacyModal">&times;</span> <!-- ✅ Agrega la cruz -->
+    <h5>Política de Privacidad</h5>
       <p class="paragraph">En EU Emissions valoramos tu privacidad. Los datos recopilados mediante formularios se utilizan únicamente para responder consultas y no se comparten con terceros.</p>
       <p class="paragraph">Este sitio no utiliza cookies con fines publicitarios ni realiza seguimiento externo. Toda la información proporcionada será tratada de acuerdo con el Reglamento General de Protección de Datos (GDPR) de la UE.</p>
       <p class="paragraph">Para más información, puedes contactarnos desde el formulario de contacto.</p>

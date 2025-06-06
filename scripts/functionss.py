@@ -55,3 +55,4 @@ def grafica(nombre, data):
     plt.close()  # Cerrar la figura para liberar memoria
     
     return img_filename
+
