@@ -1,7 +1,7 @@
 /* Mantén todos tus estilos originales y agrega estos: */
 
 .team-info {
-  padding: inherit;
+ 
   max-width: 90%;
   margin: 40px auto;
   background-color: var(--bg-color);
@@ -245,7 +245,8 @@ body.dark-mode .team-member p strong {
   50% { opacity: 0.3; }
 }
 
-/@media (max-width: 768px) {
+
+@media (max-width: 768px) {
   .team-members {
     flex-direction: column;
     align-items: center;

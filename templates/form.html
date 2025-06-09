@@ -2,35 +2,43 @@
 
 {% block title %}Contacto{% endblock %}
 
-{% block header_title %}Formulario de contacto{% endblock %}
-{% block header_subtitle %}Contáctanos{% endblock %}
+{% block header_title %}
+  <span data-i18n="form_title">Formulario de contacto</span>
+{% endblock %}
+{% block header_subtitle %}
+  <span data-i18n="contact_us">Contáctanos</span>
+{% endblock %}
 {% block content %}
 
-<form action="{{ url_for('submit_form') }}" method="post" class="form">
-  <div class="user">
-    <ul class="user-info">
+<div class="project-content">
+  <h3 data-i18n="form_title">Formulario de contacto</h3>
+  <form action="{{ url_for('submit_form') }}" method="post" class="form">
+    <div class="user">
+      <ul class="user-info">
         <li class="user-info__item">
-            <label for="name">Su nombre</label>
-            <input type="text" name="name" id="name" placeholder="Introduzca su nombre completo" required>
+          <label for="name" data-i18n="name_label">Su nombre</label>
+          <input type="text" name="name" id="name" placeholder="Introduzca su nombre completo" data-i18n-placeholder="name_placeholder" required>
         </li>
         <li class="user-info__item">
-            <label for="email">Su correo electrónico</label>
-            <input type="email" name="email" id="email" placeholder="Introduzca su correo electrónico" required>
+          <label for="email" data-i18n="email_label">Su correo electrónico</label>
+          <input type="email" name="email" id="email" placeholder="Introduzca su correo electrónico" data-i18n-placeholder="email_placeholder" required>
         </li>
-    </ul>
+      </ul>
 
-    <ul class="address-date">
+      <ul class="address-date">
         <li class="user-info__item">
-            <label for="address">Especifique su dirección</label>
-            <input type="text" name="address" id="address" placeholder="Su dirección" required>
+          <label for="address" data-i18n="address_label">Especifique su dirección</label>
+          <input type="text" name="address" id="address" placeholder="Su dirección" data-i18n-placeholder="address_placeholder" required>
         </li>
         <li class="user-info__item">
-            <label for="message">Mensaje</label>
-            <textarea name="message" id="message" rows="5" placeholder="Escriba su mensaje aquí" required></textarea>
+          <label for="message" data-i18n="message_label">Mensaje</label>
+          <textarea name="message" id="message" rows="5" placeholder="Escriba su mensaje aquí" data-i18n-placeholder="message_placeholder" required></textarea>
         </li>
-    </ul>
+      </ul>
+    </div>
+    <button type="submit" class="button" data-i18n="submit_button">Enviar</button>
+  </form>    
   </div>
-  <button class="button" type="submit">Listo</button>
-</form>
+</div>
 
 {% endblock %}

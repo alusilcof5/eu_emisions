@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
   
  */
 
+
+
+  
+
   // Función para manejar el toggle del menú
 function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
@@ -189,4 +193,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+
+        
+
+
+
+// Exportar las funciones para pruebas
+module.exports = {
+  toggleMenu,
+  initializeTheme,
+  toggleDarkMode,
+  setupModalLinks,
+  setupCloseButtons,
+  setupOutsideClickToClose
+};
 

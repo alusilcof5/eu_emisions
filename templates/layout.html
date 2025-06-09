@@ -35,10 +35,17 @@
                 <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
                 <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
             <li><button id="theme-toggle">
-                  <i class="fas fa-moon"></i>
-                </button></li>
+                  <i class="fas fa-moon"></i></button>
+            </li>
+            <li>
+               <select id="language-select" onchange="setLanguage(this.value)">
+        <option value="es" selected data-i18n="lang_es">Español</option>
+        <option value="en" data-i18n="lang_en">English</option>
+      </select>
+            </li>
               </div>
             </ul>
+            
 
         </div>
         
@@ -85,6 +92,7 @@
     </div>
   </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/traduction.js') }}"></script>
     
 
 
