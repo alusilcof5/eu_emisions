@@ -1,0 +1,83 @@
+HTML
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>{ % Block Title %} EU emissions { % endblock %}</title>
+<link href="{{ url_for('static', filename='css/variables.css') }}" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/country_details.css') }}" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/about.css') }}" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/project.css') }}" rel="stylesheet"/>
+<link href="../static/css/form.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon" type="image/png"/>
+</head>
+<body>
+<nav class="navbar">
+<div class="navbar__right">
+<a href="{{ url_for('index') }}">
+<img alt="Inicio" src="{{ url_for('static', filename='img/favicon.png') }}" style="height: 70px;"/>
+</a>
+</div>
+<div class="navbar__left">
+<button class="menu-toggle">☰</button>
+<ul class="nav-links">
+<li><a class="menu" href="{{ url_for('index') }}">Start</a></li>
+<li><a class="menu" href="{{ url_for('about') }}">About us</a></li>
+<li><a class="menu" href="{{ url_for('project') }}">About the project</a></li>
+<li><a class="menu" href="{{ url_for('form') }}">Contact</a></li>
+<li><button id="theme-toggle">
+<i class="fas fa-moon"></i></button>
+</li>
+<li>
+<select id="language-select" onchange="setLanguage(this.value)">
+<option data-i18n="lang_es" selected="" value="es">Spanish</option>
+<option data-i18n="lang_en" value="en">English</option>
+</select>
+</li>
+</ul></div>
+
+
+</nav>
+<header class="header">
+Right -wing
+<div class="header__text">
+<h1>{ % Block Header_title %} CO₂ { % Endblock %} emissions</h1>
+</div>
+<div><p class="paragraph">{ % Block Header_subtitle %} Consult and compare the carbon footprint { % endblock %}</p></div>
+</header>
+<main>{ % block content %} { % endblock %}</main>
+<footer class="footer">
+<div class="footer__team">
+<ul class="legal">
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Terms and conditions</a></li>
+</ul>
+</div>
+</footer>
+Modal Privacy Policy
+Modal Privacy Policy
+<div class="modal" id="privacyModal">
+<div class="modal-content">
+<span class="close" data-modal="privacyModal">×</span> ✅ Add the cross
+<h5>Privacy Policy</h5>
+<p class="paragraph">In the US we value your privacy.The data collected by forms are used only to respond to consultations and are not shared with third parties.</p>
+<p class="paragraph">This site does not use cookies for advertising purposes or perform external monitoring.All information provided will be treated in accordance with the General Data Protection Regulation (GDPR) of the EU.</p>
+<p class="paragraph">For more information, you can contact us from the contact form.</p>
+</div>
+</div>
+MODAL TERMS AND CONDITIONS
+<div class="modal" id="termsModal">
+<div class="modal-content">
+<span class="close" data-modal="termsModal">×</span>
+<h5>Terms and conditions</h5>
+<p class="paragraph">The EU ISSIONS website offers educational information based on public data on CO₂ emissions in the European Union.</p>
+<p class="paragraph">The use of this information is the user's responsibility.We do not guarantee the absolute precision or the use that third parties can give to the exposed data.</p>
+<p class="paragraph">The content should not be reused for commercial purposes without express authorization.</p>
+</div>
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/traduction.js') }}"></script>
+</body>
+</html>

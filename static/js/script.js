@@ -195,6 +195,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         
+function setLanguage(lang) {
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    window.location.href = url.toString();
+}
+
+// Al cargar, poner el valor actual en el select
+window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang') || 'es';
+    const select = document.getElementById('language-select');
+    if (select) {
+        select.value = lang;
+    }
+});
 
 
 

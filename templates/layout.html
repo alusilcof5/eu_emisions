@@ -30,7 +30,8 @@
         <div class="navbar__left">
             <button class="menu-toggle">☰</button> 
             <ul class="nav-links">
-                <li><a href="{{ url_for('index') }}" class="menu">Inicio</a></li>
+                <li><a href="{{ url_for('index', lang=request.args.get('lang', 'es')) }}">Inicio</a>
+</li>
                 <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
                 <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
                 <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
@@ -38,11 +39,12 @@
                   <i class="fas fa-moon"></i></button>
             </li>
             <li>
-               <select id="language-select" onchange="setLanguage(this.value)">
-        <option value="es" selected data-i18n="lang_es">Español</option>
-        <option value="en" data-i18n="lang_en">English</option>
-      </select>
-            </li>
+                <select id="language-select" onchange="setLanguage(this.value)">
+                  <option value="es" data-i18n="lang_es">Español</option>
+                  <option value="en" data-i18n="lang_en">English</option>
+                </select>
+              </li>
+
               </div>
             </ul>
             
