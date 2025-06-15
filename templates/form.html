@@ -12,7 +12,7 @@
 
 <div class="project-content">
   <h3 data-i18n="form_title">Formulario de contacto</h3>
-  <form action="{{ url_for('submit_form') }}" method="post" class="form">
+  <form action="{{ url_for('submit_form') }}" method="post" class="form" id="contact-form">
     <div class="user">
       <ul class="user-info">
         <li class="user-info__item">
@@ -37,8 +37,16 @@
       </ul>
     </div>
     <button type="submit" class="button" data-i18n="submit_button">Enviar</button>
-  </form>    
+  </form>
+
+  <!-- Popup for success message -->
+  <div id="success-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+      <span id="close-popup" class="close">×</span>
+      <p data-i18n="success_message">¡Su mensaje ha sido enviado con éxito!</p>
+    </div>
   </div>
 </div>
+
 
 {% endblock %}

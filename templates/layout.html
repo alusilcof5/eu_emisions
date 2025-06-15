@@ -13,14 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
-
-
-
 </head>
 <body>
-    
-
-    <nav class="navbar">
+        <nav class="navbar">
         <div class="navbar__right">
             <a href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='img/favicon.png') }}" alt="Inicio" style="height: 70px;">
@@ -34,18 +29,15 @@
 </li>
                 <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
                 <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
-                <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
-            <li><button id="theme-toggle">
-                  <i class="fas fa-moon"></i></button>
+                <li><a href="{{ url_for('show_form') }}" class="menu">Contacto</a></li>
+
+            <li><button class="text-2xl p-5 rounded-full">
+  <i class="fas fa-moon"></i>
+</button>
             </li>
-            
-
-              </div>
+          </div>
             </ul>
-            
-
         </div>
-        
     </nav>
     <header class="header">
         <!-- LOGO A LA DERECHA -->
@@ -66,11 +58,11 @@
                             </ul>
         </div>
     </footer>
-    <!-- Modal Política de Privacidad -->
+
 <!-- Modal Política de Privacidad -->
 <div id="privacyModal" class="modal">
   <div class="modal-content">
-    <span class="close" data-modal="privacyModal">&times;</span> <!-- ✅ Agrega la cruz -->
+    <span class="close" data-modal="privacyModal">&times;</span> 
     <h5>Política de Privacidad</h5>
       <p class="paragraph">En EU Emissions valoramos tu privacidad. Los datos recopilados mediante formularios se utilizan únicamente para responder consultas y no se comparten con terceros.</p>
       <p class="paragraph">Este sitio no utiliza cookies con fines publicitarios ni realiza seguimiento externo. Toda la información proporcionada será tratada de acuerdo con el Reglamento General de Protección de Datos (GDPR) de la UE.</p>
@@ -89,9 +81,7 @@
     </div>
   </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/traduction.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
     
-
-
 </body>
 </html>

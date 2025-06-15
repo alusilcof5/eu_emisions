@@ -22,12 +22,12 @@
 }
 
 .team-members {
-  padding: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
 }
 
 .team-member-container {
@@ -161,20 +161,22 @@
 }
 
 .linkedin-link {
-  color: #0A66C2;
   text-decoration: none;
 }
 
-.linkedin-link:hover {
-  color: #004182;
+.linkedin-link i {
+  color: #0A66C2 !important;
 }
 
 
-.team-member-back .linkedin-link {
+
+
+
+.team-member-back {
   color: white;
 }
 
-.team-member-back .linkedin-link:hover {
+.team-member-back {
   color: #87CEEB;
 }
 

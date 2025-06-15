@@ -12,7 +12,7 @@
         <p><strong>Iniciativas de sostenibilidad:</strong> Detalles sobre proyectos y medidas ambientales en {{ country.name }}.</p>
       </div>
 
-      <!-- Si existe la gráfica, mostrarla -->
+      
       {% if img_path %}
         <div class="country-chart">
           <h6>Gráfica de emisiones de CO₂</h6>
@@ -22,7 +22,7 @@
         <p>No se pudo generar la gráfica.</p>
       {% endif %}
 
-      <!-- Botón de regreso -->
+     
       <a href="{{ url_for('index') }}" class="btn">Volver a la lista de países</a>
     </section>
 {% endblock %} 
