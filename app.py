@@ -1,29 +1,22 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
-from models import db, ContactMessage
+from flask import Flask, render_template, jsonify
+import pandas as pd
 
-@app.route('/form', methods=['GET'])
-def show_form():
-    return render_template('form.html')
+app = Flask(__name__)
 
-@app.route('/submit_form', methods=['POST'])
-def submit_form():
-    name = request.form['name']
-    email = request.form['email']
-    address = request.form['address']
-    message = request.form['message']
+# Cargar el conjunto de datos
+data_file = 'fact_ghg_unfccc.csv'  # Asegúrate de que la ruta sea correcta
+data = pd.read_csv(data_file)
 
-    new_msg = ContactMessage(name=name, email=email, address=address, message=message)
-    db.session.add(new_msg)
-    db.session.commit()
+@app.route('/')
+def index():
+    return render_template('dashboard.html')
 
-    return render_template('form.html', show_thanks=True)
+@app.route('/data')
+def get_data():
+    # Procesar los datos según sea necesario
+    filtered_data = data[['TIME_PERIOD', 'geo', 'Sector_code', 'OBS_VALUE']]
+    filtered_data = filtered_data.dropna()
+    return jsonify(filtered_data.to_dict(orient='records'))
 
-    flash('Gracias por tu mensaje. Te contactaremos pronto.')
-    return redirect(url_for('show_form'))
-
-if __name__ == "__main__":
-    app = create_app()
-    with app.app_context():
-        db.create_all()
-
+if __name__ == '__main__':
     app.run(debug=True)

@@ -229,7 +229,152 @@ document.addEventListener('DOMContentLoaded', () => {
       this.style.display = 'none';
     }
   });
-        
+     
+  const DATA_URL = 'data/emissions.csv';
+let emissionsData = [];
+let availableYears = [];
+let selectedYear = 2023;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    emissionsData = await loadCSV(DATA_URL);
+    availableYears = [...new Set(emissionsData.map(d => d.year))].sort();
+
+    populateYearSelector();
+    renderCharts();
+});
+
+function populateYearSelector() {
+    const selector = document.getElementById('year-selector');
+    availableYears.forEach(year => {
+        const option = document.createElement('option');
+        option.value = year;
+        option.text = year;
+        if (year == selectedYear) option.selected = true;
+        selector.appendChild(option);
+    });
+
+    selector.addEventListener('change', () => {
+        selectedYear = parseInt(selector.value);
+        renderCharts();
+    });
+}
+
+function renderCharts() {
+    const container = document.getElementById('charts-container');
+    container.innerHTML = ''; // Clear previous charts
+
+    ['AT', 'SE'].forEach(country => {
+        const section = document.createElement('section');
+        section.className = "mb-12";
+
+        const title = document.createElement('h2');
+        title.className = "text-2xl font-semibold text-gray-800 mb-4";
+        title.textContent = `${country === 'AT' ? 'Austria' : 'Sweden'} (${country})`;
+        section.appendChild(title);
+
+        const countryData = emissionsData.filter(d => d.country === country);
+
+        if (countryData.length === 0) {
+            const p = document.createElement('p');
+            p.className = "text-gray-600";
+            p.textContent = `No data available for ${country}.`;
+            section.appendChild(p);
+            container.appendChild(section);
+            return;
+        }
+
+        // Line Chart
+        createChart(section, `${country.toLowerCase()}-line-chart`, generateLineChart(countryData));
+
+        // Bar Chart
+        const yearData = countryData.filter(d => d.year == selectedYear);
+        createChart(section, `${country.toLowerCase()}-bar-chart`, generateBarChart(yearData, selectedYear));
+
+        // Area Chart
+        createChart(section, `${country.toLowerCase()}-area-chart`, generateAreaChart(countryData));
+
+        container.appendChild(section);
+    });
+}
+
+function createChart(container, id, plotData) {
+    const div = document.createElement('div');
+    div.className = "bg-white p-6 rounded-lg shadow mb-6";
+    const chartDiv = document.createElement('div');
+    chartDiv.id = id;
+    chartDiv.style.height = "400px";
+    div.appendChild(chartDiv);
+    container.appendChild(div);
+    Plotly.newPlot(id, plotData.data, plotData.layout);
+}
+
+function generateLineChart(data) {
+    const sectors = [...new Set(data.map(d => d.sector))];
+    const traces = sectors.map(sector => {
+        const filtered = data.filter(d => d.sector === sector);
+        return {
+            x: filtered.map(d => d.year),
+            y: filtered.map(d => d.emissions),
+            mode: 'lines+markers',
+            name: sector
+        };
+    });
+    return {
+        data: traces,
+        layout: { title: 'Emissions Over Time' }
+    };
+}
+
+function generateBarChart(data, year) {
+    return {
+        data: [{
+            x: data.map(d => d.sector),
+            y: data.map(d => d.emissions),
+            type: 'bar'
+        }],
+        layout: { title: `Emissions in ${year}` }
+    };
+}
+
+function generateAreaChart(data) {
+    const sectors = [...new Set(data.map(d => d.sector))];
+    const traces = sectors.map(sector => {
+        const filtered = data.filter(d => d.sector === sector);
+        return {
+            x: filtered.map(d => d.year),
+            y: filtered.map(d => d.emissions),
+            stackgroup: 'one',
+            name: sector,
+            type: 'scatter',
+            mode: 'none'
+        };
+    });
+    return {
+        data: traces,
+        layout: { title: 'Stacked Emissions Area Chart' }
+    };
+}
+
+async function loadCSV(url) {
+    const response = await fetch(url);
+    const text = await response.text();
+    const lines = text.trim().split('\n');
+    const headers = lines[0].split(',');
+
+    return lines.slice(1).map(line => {
+        const values = line.split(',');
+        return {
+            year: parseInt(values[0]),
+            country: values[1],
+            sector: values[2],
+            emissions: parseFloat(values[3])
+        };
+    });
+}
+
+  
+
+
 // Exportar las funciones para pruebas
 module.exports = {
   toggleMenu,

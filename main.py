@@ -120,6 +120,17 @@ def csv_reader():
 def visualizacion():
     return render_template('visualizacion.html')
 
+@app.route('/datos-generales')
+def general_data():
+    return render_template('general_data.html')
+
+@app.route('/datos-por-pais')
+def country_data():
+    return render_template('country_data.html')
+
+@app.route('/datos-por-sector')
+def sector_data():
+    return render_template('sector_data.html')
 # ------------------ Iniciar la app ------------------
 
 if __name__ == '__main__':
