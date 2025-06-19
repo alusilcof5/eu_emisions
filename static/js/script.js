@@ -110,16 +110,38 @@ function initializeTheme() {
 }
 
 // Función para alternar el modo oscuro
-function toggleDarkMode(body, icon) {
-  const darkModeOn = body.classList.toggle('dark-mode');
-  if (darkModeOn) {
-      icon.classList.replace('fa-moon', 'fa-sun');
-      localStorage.setItem('theme', 'dark');
-  } else {
-      icon.classList.replace('fa-sun', 'fa-moon');
-      localStorage.setItem('theme', 'light');
-  }
-}
+  const toggleButton = document.getElementById("darkModeToggle");
+  const icon = document.getElementById("darkModeIcon");
+
+  // Activar/desactivar modo oscuro
+  toggleButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    // Cambiar ícono
+    if (document.body.classList.contains("dark-mode")) {
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    } else {
+      icon.classList.remove("fa-sun");
+      icon.classList.add("fa-moon");
+    }
+
+    // Guardar en localStorage
+    const isDark = document.body.classList.contains("dark-mode");
+    localStorage.setItem("dark-mode", isDark);
+  });
+
+  // Al cargar la página, aplicar preferencia guardada
+  window.addEventListener("DOMContentLoaded", () => {
+    const savedDarkMode = localStorage.getItem("dark-mode") === "true";
+    if (savedDarkMode) {
+      document.body.classList.add("dark-mode");
+      icon.classList.remove("fa-moon");
+      icon.classList.add("fa-sun");
+    }
+  });
+
+
 
 // Función para manejar la apertura de modales
 function setupModalLinks() {

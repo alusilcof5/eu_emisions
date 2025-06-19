@@ -192,6 +192,10 @@
     align-items: center;
     padding: 1rem;
     background-color: var(--color-light-gray);
+    font-size: 16px;
+    line-height: 1.5;
+    
+
   }
   
   .navbar__left {
@@ -308,7 +312,45 @@
     text-decoration: none;
   }
   
-  
+  /* Estilo del dropdown en el navbar */
+.dropdown {
+  position: relative;
+}
+
+
+/* Ocultar el contenido por defecto */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-radius: 5px;
+}
+
+/* Mostrar el dropdown al pasar el mouse */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Estilo de los enlaces del submenú */
+.dropdown-content li a {
+  display: block;
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
   
   /* Media Queries */
   

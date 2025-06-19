@@ -9,89 +9,55 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/country_details.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}"> 
+    <link rel="stylesheet" href="../static/css/form.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
-    <style>
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            z-index: 1000;
-            border-radius: 5px;
-        }
-
-        .dropdown-content li a {
-            padding: 10px 15px;
-            display: block;
-            text-decoration: none;
-            color: #333;
-        }
-
-        .dropdown-content li a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar">
+        <nav class="navbar">
         <div class="navbar__right">
             <a href="{{ url_for('index') }}">
                 <img src="{{ url_for('static', filename='img/favicon.png') }}" alt="Inicio" style="height: 70px;">
-            </a>
-        </div>
+              </a>
+                      </div>
 
         <div class="navbar__left">
             <button class="menu-toggle">☰</button> 
             <ul class="nav-links">
-                <!-- INICIO con desplegable -->
-                <li class="dropdown">
-                    <a href="{{ url_for('index', lang=request.args.get('lang', 'es')) }}" class="menu">
-                        Inicio <i class="fas fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-content">
-                        <li><a href="{{ url_for('general_data') }}">Datos generales</a></li>
-                        <li><a href="{{ url_for('country_data') }}">Datos por país</a></li>
-                        <li><a href="{{ url_for('sector_data') }}">Datos por sector</a></li>
-                    </ul>
-                </li>
+    <li class="dropdown">
+    <a href="{{ url_for('index', lang=request.args.get('lang', 'es')) }}" class="menu">
+        Inicio <i class="fas fa-caret-down"></i>
+    </a>
+    <ul class="dropdown-content">
+        <li><a href="{{ url_for('general_data') }}">Datos generales</a></li>
+        <li><a href="{{ url_for('country_data') }}">Datos por país</a></li>
+        <li><a href="{{ url_for('sector_data') }}">Datos por sector</a></li>
+    </ul>
+</li>
 
-                <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
-                <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
-                <li><a href="{{ url_for('show_form') }}" class="menu">Contacto</a></li>
-                <li>
-                    <button class="text-2xl p-5 rounded-full">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </li>
-            </ul>
+    <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
+    <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
+    <li><a href="{{ url_for('show_form') }}" class="menu">Contacto</a></li>
+
+
+    <li>
+  <button id="darkModeToggle" class="text-2xl p-5 rounded-full">
+    <i id="darkModeIcon" class="fas fa-moon"></i>
+  </button>
+</li>
+
+
+</ul>
         </div>
     </nav>
-
     <header class="header">
+        <!-- LOGO A LA DERECHA -->
         <div class="header__text">
             <h1>{% block header_title %}Emisiones de CO₂{% endblock %}</h1>
         </div>
-        <div>
-            <p class="paragraph">{% block header_subtitle %}Consulta y compara la huella de carbono{% endblock %}</p>
-        </div>
+        <div><p class="paragraph">{% block header_subtitle %}Consulta y compara la huella de carbono{% endblock %}</p></div>
     </header>
-
     <main>
         {% block content %}{% endblock %}
     </main>
@@ -101,33 +67,33 @@
             <ul class="legal">
                 <li><a href="#">Política de Privacidad</a></li>
                 <li><a href="#">Términos y Condiciones</a></li>
-            </ul>
+                            </ul>
         </div>
     </footer>
 
-    <!-- Modal Política de Privacidad -->
-    <div id="privacyModal" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="privacyModal">&times;</span> 
-            <h5>Política de Privacidad</h5>
-            <p class="paragraph">En EU Emissions valoramos tu privacidad. Los datos recopilados mediante formularios se utilizan únicamente para responder consultas y no se comparten con terceros.</p>
-            <p class="paragraph">Este sitio no utiliza cookies con fines publicitarios ni realiza seguimiento externo. Toda la información proporcionada será tratada de acuerdo con el Reglamento General de Protección de Datos (GDPR) de la UE.</p>
-            <p class="paragraph">Para más información, puedes contactarnos desde el formulario de contacto.</p>
-        </div>
+<!-- Modal Política de Privacidad -->
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close" data-modal="privacyModal">&times;</span> 
+    <h5>Política de Privacidad</h5>
+      <p class="paragraph">En EU Emissions valoramos tu privacidad. Los datos recopilados mediante formularios se utilizan únicamente para responder consultas y no se comparten con terceros.</p>
+      <p class="paragraph">Este sitio no utiliza cookies con fines publicitarios ni realiza seguimiento externo. Toda la información proporcionada será tratada de acuerdo con el Reglamento General de Protección de Datos (GDPR) de la UE.</p>
+      <p class="paragraph">Para más información, puedes contactarnos desde el formulario de contacto.</p>
     </div>
-
-    <!-- Modal Términos y Condiciones -->
-    <div id="termsModal" class="modal">
-        <div class="modal-content">
-            <span class="close" data-modal="termsModal">&times;</span>
-            <h5>Términos y Condiciones</h5>
-            <p class="paragraph">El sitio web EU Emissions ofrece información educativa basada en datos públicos sobre las emisiones de CO₂ en la Unión Europea.</p>
-            <p class="paragraph">El uso de esta información es responsabilidad del usuario. No garantizamos la precisión absoluta ni el uso que terceros puedan dar a los datos expuestos.</p>
-            <p class="paragraph">El contenido no debe ser reutilizado con fines comerciales sin autorización expresa.</p>
-        </div>
+  </div>
+  
+  <!-- Modal Términos y Condiciones -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-modal="termsModal">&times;</span>
+      <h5>Términos y Condiciones</h5>
+      <p class="paragraph">El sitio web EU Emissions ofrece información educativa basada en datos públicos sobre las emisiones de CO₂ en la Unión Europea.</p>
+      <p class="paragraph">El uso de esta información es responsabilidad del usuario. No garantizamos la precisión absoluta ni el uso que terceros puedan dar a los datos expuestos.</p>
+      <p class="paragraph">El contenido no debe ser reutilizado con fines comerciales sin autorización expresa.</p>
     </div>
-
+  </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+    
 </body>
 </html>
