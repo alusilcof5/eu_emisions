@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard Emisiones GEI{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Emisiones de GEI en Europa</h1>
+  <h3 class="subtitle">Evolución total anual de emisiones en toda Europa</h3>
+
+  <!-- Resumen -->
+  <div class="grid">
+    <div class="card">
+      <p class="label">Total de Registros</p>
+      <p id="total-records" class="value">Cargando...</p>
+    </div>
+    <div class="card">
+      <p class="label">Total de Países</p>
+      <p id="total-countries" class="value">Cargando...</p>
+    </div>
+    <div class="card">
+      <p class="label">Año Mínimo</p>
+      <p id="min-year" class="value">Cargando...</p>
+    </div>
+    <div class="card">
+      <p class="label">Año Máximo</p>
+      <p id="max-year" class="value">Cargando...</p>
+    </div>
+  </div>
+
+  <!-- Gráfico -->
+  <div class="chart-container">
+    <h2>Evolución de Emisiones</h2>
+    <div id="chart"></div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+{% endblock %}

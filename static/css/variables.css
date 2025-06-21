@@ -1,56 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
+  /* Colores base */
   --bg-color: #f9f9f9;
   --text-color: #000000;
-  --accent-color: #356d0d;
-  --btn-hover: #5da22c;
-  --border-color: #5a9e37;
-  --card-shadow: rgba(0, 0, 0, 0.1);
 
-  --color-bg-light: #ffffff;
+  /* Colores primarios */
   --color-primary: #356d0d;
   --color-primary-alt: #5a9e37;
   --color-primary-hover: #5da22c;
 
-  --color-text-light: #2b2a2a;
-  --color-text-dark: #e0e0e0;
+  /* Colores de fondo y texto */
+  --color-bg-light: #ffffff;
   --color-text-default: #1a1a1a;
-  --color-white: #ffffff;
-  --color-black: #000000;
 
-  --color-dark-gray: #2c2c2c;
+  /* Grises */
   --color-light-gray: #f4f4f4;
   --color-mid-gray: #ccc;
-  --color-gray-text: #000000;
   --color-border: #a8a8a8;
-  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-gray-text: #000000;
+
+  /* Sombra y fondo de tarjeta */
+  --shadow-light: rgba(0, 0, 0, 0.1);
   --color-card-bg: #f9f9f9;
+
+  /* Verde */
   --color-green: #356d0d;
   --color-hover-green: #7ac943;
-  --color-dark-text: #2b2a2a;
-  --color-footer-bg: #356d0d;
-  --color-navbar-hover: #555;
-  --color-link: #333;
-  --color-link-visited: #333;
-  --color-modal-text: #222;
-  --color-modal-close: #aaa;
-  --color-legal-border: #ffffff;
-  --color-legal-text: #ffffff;
 
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-soft: rgba(0, 0, 0, 0.08);
-
+  /* Tipografía */
   --font-main: 'Montserrat', sans-serif;
 }
 
 body.dark-mode {
   --bg-color: #2c2c2c;
   --text-color: #e2e2e2;
-  --accent-color: #7ac943;
-  --btn-hover: #a3ea63;
-  --border-color: #4d9b1a;
-  --card-shadow: rgba(255, 255, 255, 0.1);
-
-  --font-main: 'Montserrat', sans-serif;
+  --color-primary: #7ac943;
+  --color-primary-hover: #a3ea63;
+  --shadow-light: rgba(255, 255, 255, 0.1);
 }
