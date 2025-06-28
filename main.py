@@ -122,15 +122,23 @@ def visualizacion():
 
 @app.route('/datos-generales')
 def general_data():
-    return render_template('general_data.html')
+    return render_template('data_template/general_data.html')
 
-@app.route('/datos-por-pais')
+@app.route("/datos-por-pais")
 def country_data():
-    return render_template('country_data.html')
+    return render_template("data_template/country_data.html")
+
 
 @app.route('/datos-por-sector')
 def sector_data():
-    return render_template('sector_data.html')
+    return render_template('data_template/sector_data.html')
+
+
+@app.route('/data-visualization')
+def data_visualization():
+    return render_template('data_template/data.html')
+
+
 # ------------------ Iniciar la app ------------------
 
 if __name__ == '__main__':

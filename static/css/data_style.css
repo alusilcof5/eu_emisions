@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* === Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-main);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* === Contenedor general === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* === Títulos === */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-default);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* === Navegación horizontal === */
+.nav-horizontal {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nav-horizontal li {
+  margin: 0;
+}
+
+.nav-horizontal a {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.nav-horizontal a:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* === Grid resumen === */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* === Tarjetas === */
+.card {
+  background-color: var(--color-bg-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px var(--shadow-light);
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--color-gray-text);
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--color-text-default);
+}
+
+/* === Selector === */
+.selector {
+  background-color: var(--color-bg-light);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.selector select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-light-gray);
+  transition: border-color 0.3s ease;
+}
+
+.selector select:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* === Mapa === */
+    #map {
+      width: 90%;
+      height: 600px;
+      max-width: 1000px;
+      margin: 20px auto;
+    }
+
+    .center-button {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .center-button button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+
+
+/* === Responsivo para Tablets (≤ 991px) === */
+@media (max-width: 991px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .selector {
+    padding: 1.5rem;
+  }
+
+  .nav-horizontal a {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  #map {
+    height: 450px;
+    width: 95%;
+  }
+}
+
+/* === Responsivo para Móviles (≤ 600px) === */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .nav-horizontal {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .nav-horizontal a {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .selector {
+    padding: 1rem;
+  }
+
+  .selector select {
+    font-size: 0.95rem;
+  }
+
+  #map {
+    height: 350px;
+    width: 100%;
+  }
+
+  .center-button button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}

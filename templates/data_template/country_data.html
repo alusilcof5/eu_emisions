@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}Emisiones por País{% endblock %}
+
+{% block header_title %}Datos de emisiones por país{% endblock %}
+{% block header_subtitle %}.....{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="title">Emisiones en Europa</h1>
+
+    <div class="grid">
+      <div class="card">
+        <p class="label">Total de Registros</p>
+        <p id="total-records" class="value">Cargando...</p>
+      </div>
+      <div class="card">
+        <p class="label">Total de Países</p>
+        <p id="total-countries" class="value">Cargando...</p>
+      </div>
+      <div class="card">
+        <p class="label">Año Mínimo</p>
+        <p id="min-year" class="value">Cargando...</p>
+      </div>
+      <div class="card">
+        <p class="label">Año Máximo</p>
+        <p id="max-year" class="value">Cargando...</p>
+      </div>
+    </div>
+    
+    <div class="selector">
+      <h2>Seleccionar país de Europa</h2>
+      <select id="country-select">
+        <option value="">Seleccione un país</option>
+      </select>
+    </div>
+   
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div class="chart-container">
+      <div id="chart"></div>
+      
+    </div>
+  </div><div class="button__container">
+    <a href="/" class="btn" title="Volver">
+      ⬅ 
+    </a>
+
+  <script src="../../static/data_script/country_data.js"></script>
+
+  {% endblock %}
