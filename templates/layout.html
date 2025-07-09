@@ -9,13 +9,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/country_details.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_variables.css') }}">
-
-   
-   
-    <link rel="stylesheet" href="../static/css/form.css"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
@@ -45,7 +41,8 @@
 
     <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
     <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
-    <li><a href="{{ url_for('show_form') }}" class="menu">Contacto</a></li>
+    <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
+
     
 
 
@@ -77,7 +74,11 @@
                 <li><a href="#">Términos y Condiciones</a></li>
                             </ul>
         </div>
+        <a href="https://github.com/alusilcof5/eu_emisions.git" target="_blank">
+            <i class="fab fa-github"></i> Ver Código Fuente en GitHub
+        </a>
     </footer>
+
 
 <!-- Modal Política de Privacidad -->
 <div id="privacyModal" class="modal">
@@ -100,9 +101,16 @@
       <p class="paragraph">El contenido no debe ser reutilizado con fines comerciales sin autorización expresa.</p>
     </div>
   </div>
+
+  
+        
+
+
+  {% block scripts %}
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
     <script src="{{ url_for('static', filename='data/data_script/country_data.js') }}"></script>
-    
+    <script src="{{ url_for('static', filename='data/data_script/general_data.js') }}"></script>
+    {% endblock %}
 </body>
 </html>

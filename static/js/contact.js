@@ -1,4 +1,4 @@
- document.getElementById('contact-form').addEventListener('submit', async function(event) {
+ document.getElementById('form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent default form submission
     const form = event.target;
     const formData = new FormData(form);

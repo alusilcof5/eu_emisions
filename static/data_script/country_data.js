@@ -1,41 +1,40 @@
+const eu27Countries = [
+  "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE",
+  "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT",
+  "RO", "SK", "SI", "ES", "SE"
+];
+
 const countryCodeToName = {
   "AT": "Austria",
   "BE": "Belgium",
   "BG": "Bulgaria",
-  "CH": "Switzerland",
+  "HR": "Croatia",
   "CY": "Cyprus",
   "CZ": "Czech Republic",
-  "DE": "Germany",
   "DK": "Denmark",
   "EE": "Estonia",
-  "ES": "Spain",
   "FI": "Finland",
   "FR": "France",
-  "GB": "United Kingdom",
+  "DE": "Germany",
   "GR": "Greece",
-  "HR": "Croatia",
   "HU": "Hungary",
   "IE": "Ireland",
-  "IS": "Iceland",
   "IT": "Italy",
+  "LV": "Latvia",
   "LT": "Lithuania",
   "LU": "Luxembourg",
-  "LV": "Latvia",
   "MT": "Malta",
   "NL": "Netherlands",
-  "NO": "Norway",
   "PL": "Poland",
   "PT": "Portugal",
   "RO": "Romania",
-  "SE": "Sweden",
-  "SI": "Slovenia",
   "SK": "Slovakia",
-  "EU27_2020": "European Union (27 countries, 2020)"
+  "SI": "Slovenia",
+  "ES": "Spain",
+  "SE": "Sweden"
 };
 
-const csvUrl = '/static/data_script/data.csv';
-
-// Function to parse CSV data
+const csvUrl = '/static/data_script/emissions_europe.csv';
 
 function parseCSV(data) {
   const lines = data.trim().split('\n');
@@ -44,8 +43,9 @@ function parseCSV(data) {
     const values = row.split(',');
     const obj = {};
     headers.forEach((h, i) => obj[h] = values[i]);
-    obj.OBS_VALUE = parseFloat(obj.OBS_VALUE);
-    obj.TIME_PERIOD = parseInt(obj.TIME_PERIOD);
+    obj.Year = parseInt(obj.Year);
+    obj.Total_Emissions_UNFCCC = parseFloat(obj.Total_Emissions_UNFCCC);
+    obj.Total_Net_Emissions_UNFCCC = parseFloat(obj.Total_Net_Emissions_UNFCCC);
     return obj;
   });
 }
@@ -55,78 +55,92 @@ fetch(csvUrl)
   .then(csvData => {
     const data = parseCSV(csvData);
 
-    const allowedSectors = [
-      "1 - Energy",
-      "1.A.3 - Transport",
-      "Total emissions",
-      "Total net emissions",
-      "3 - Agriculture"
-    ];
+    // Filtra solo los países de la UE27
+    const filteredData = data.filter(row => eu27Countries.includes(row.Country));
 
-    const years = data.map(d => d.TIME_PERIOD);
-
-    // Agrupar por país y año
-    const countryGrouped = {};
-    data.forEach(row => {
-      if (!allowedSectors.includes(row.Sector_name)) return; 
-      const country = row.geo;
-      if (!countryGrouped[country]) countryGrouped[country] = {};
-      if (!countryGrouped[country][row.TIME_PERIOD]) countryGrouped[country][row.TIME_PERIOD] = 0;
-      countryGrouped[country][row.TIME_PERIOD] += row.OBS_VALUE;
+    // Agrupa datos por país y año
+    const countryEmissions = {};
+    filteredData.forEach(row => {
+      const country = row.Country;
+      if (!countryEmissions[country]) {
+        countryEmissions[country] = {};
+      }
+      countryEmissions[country][row.Year] = row.Total_Emissions_UNFCCC;
     });
 
-    // Estadísticas básicas
-    document.getElementById("total-records").textContent = data.length;
-    document.getElementById("total-countries").textContent = new Set(data.map(d => d.geo)).size;
-    document.getElementById("min-year").textContent = Math.min(...years);
-    document.getElementById("max-year").textContent = Math.max(...years);
+    // Años únicos ordenados
+    const allYears = Array.from(new Set(filteredData.map(d => d.Year))).sort((a, b) => a - b);
 
-    // Referencia selector
+    // Actualiza estadísticas
+    document.getElementById("total-records").textContent = filteredData.length;
+    document.getElementById("total-countries").textContent = new Set(filteredData.map(d => d.Country)).size;
+    document.getElementById("min-year").textContent = Math.min(...allYears);
+    document.getElementById("max-year").textContent = Math.max(...allYears);
+
     const countrySelect = document.getElementById("country-select");
+    countrySelect.innerHTML = '<option value="">Seleccione un país</option>';
 
-    // Filtrar países, excluir "Europa" o "EU27_2020"
-    const countries = Array.from(new Set(data.map(d => d.geo)))
-      .filter(c => c !== "Europa" && c !== "EU27_2020")
-      .sort();
+    // Ordena países por nombre
+    const countries = eu27Countries
+      .filter(code => filteredData.some(d => d.Country === code))
+      .sort((a, b) => (countryCodeToName[a] || a).localeCompare(countryCodeToName[b] || b));
 
-    // Llenar selector con nombre en inglés
+    // Llena el selector
     countries.forEach(code => {
       const option = document.createElement("option");
       option.value = code;
-      option.textContent = countryCodeToName[code] || code; 
+      option.textContent = countryCodeToName[code] || code;
       countrySelect.appendChild(option);
     });
 
-    // Función para dibujar gráfico con nombres en inglés
-    function drawChart(selectedCountry = null) {
-      const traces = [];
-
-      if (selectedCountry && countryGrouped[selectedCountry]) {
-        const years = Object.keys(countryGrouped[selectedCountry]).sort((a, b) => a - b);
-        traces.push({
-          x: years,
-          y: years.map(y => countryGrouped[selectedCountry][y]),
-          name: countryCodeToName[selectedCountry] || selectedCountry,
-          mode: 'lines+markers',
-          type: 'scatter'
+    function drawChart(selectedCountryCode) {
+      if (!selectedCountryCode || !countryEmissions[selectedCountryCode]) {
+        Plotly.newPlot("chart", [], {
+          title: 'Seleccione un país para ver las emisiones',
+          xaxis: { title: 'Año' },
+          yaxis: { title: 'Emisiones (Gg CO₂ eq)' },
+          annotations: [{
+            text: 'No hay datos seleccionados',
+            xref: 'paper',
+            yref: 'paper',
+            showarrow: false,
+            font: { size: 20, color: '#ccc' }
+          }]
         });
+        return;
       }
 
-      Plotly.newPlot("chart", traces, {
-        title: 'Evolución de Emisiones por País',
+      const years = Object.keys(countryEmissions[selectedCountryCode]).sort((a, b) => a - b);
+      const emissions = years.map(year => countryEmissions[selectedCountryCode][year]);
+
+      const trace = {
+        x: years,
+        y: emissions,
+        name: countryCodeToName[selectedCountryCode] || selectedCountryCode,
+        mode: 'lines+markers',
+        type: 'scatter'
+      };
+
+      Plotly.newPlot("chart", [trace], {
+        title: `Evolución de Emisiones de ${countryCodeToName[selectedCountryCode] || selectedCountryCode}`,
         xaxis: { title: 'Año' },
         yaxis: { title: 'Emisiones (Gg CO₂ eq)' },
         legend: { orientation: 'h' }
       });
     }
 
-    // Evento cambio en selector
     countrySelect.addEventListener("change", () => {
       drawChart(countrySelect.value);
     });
 
-    drawChart(); // inicial: sin país seleccionado
+    // Dibuja el gráfico del primer país por defecto
+    if (countries.length > 0) {
+      countrySelect.value = countries[0];
+      drawChart(countries[0]);
+    } else {
+      drawChart(null);
+    }
   })
   .catch(error => {
-    console.error("Error cargando CSV:", error);
+    console.error("Error loading CSV:", error);
   });

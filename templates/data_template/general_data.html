@@ -6,43 +6,39 @@
 {% block header_subtitle %}.....{% endblock %}
 
 {% block content %}
-
 <div class="container">
-  
-    <h3 class="subtitle">Evolución total anual de emisiones en  Europa</h3>
+  <h3 class="subtitle">Evolución total anual de emisiones en Europa</h3>
 
-   
-    <div class="grid">
-      <div class="card">
-        <p class="label">Total de Registros</p>
-        <p id="total-records" class="value">Cargando...</p>
-      </div>
-      <div class="card">
-        <p class="label">Total de Países</p>
-        <p id="total-countries" class="value">Cargando...</p>
-      </div>
-      <div class="card">
-        <p class="label">Año Mínimo</p>
-        <p id="min-year" class="value">Cargando...</p>
-      </div>
-      <div class="card">
-        <p class="label">Año Máximo</p>
-        <p id="max-year" class="value">Cargando...</p>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <p class="label">Total de Registros</p>
+      <p id="total-records" class="value">Cargando...</p>
     </div>
-
-
-   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <div class="chart-container">
-      <div id="chart"></div>
+    <div class="card">
+      <p class="label">Total de Países</p>
+      <p id="total-countries" class="value">Cargando...</p>
+    </div>
+    <div class="card">
+      <p class="label">Año Mínimo</p>
+      <p id="min-year" class="value">Cargando...</p>
+    </div>
+    <div class="card">
+      <p class="label">Año Máximo</p>
+      <p id="max-year" class="value">Cargando...</p>
     </div>
   </div>
 
+  <div class="chart-container">
+    <div id="chart"></div>
+  </div>
+
   <div class="button__container">
-    <a href="/" class="btn" title="Volver">
-      ⬅ 
-    </a>
+    <a href="/" class="btn" title="Volver">⬅</a>
+  </div>
+</div>
+{% endblock %}
 
-  <script src="../../static/data_script/general_data.js"></script>
-
+{% block scripts %}
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="{{ url_for('static', filename='data_script/general_data.js') }}"></script>
 {% endblock %}

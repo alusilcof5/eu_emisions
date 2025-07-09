@@ -1,4 +1,4 @@
-const csvUrl = '/static/data_script/data.csv';
+/* const csvUrl = 'static/data_script/data.csv';
 
 function parseCSV(data) {
   const lines = data.trim().split('\n');
@@ -112,3 +112,4 @@ fetch(csvUrl)
     console.error(err);
     alert("Error cargando datos. Revisa la consola.");
   });
+ */

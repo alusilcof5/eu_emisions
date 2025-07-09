@@ -85,9 +85,10 @@ def country_details(country_code):
     return render_template('country_details.html', country=country, img_path=img_path)
 
 @app.route('/form')
-def show_form():
+def form():
     show_thanks = request.args.get('show_thanks') == '1'
     return render_template('form.html', show_thanks=show_thanks)
+
 
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
@@ -98,14 +99,14 @@ def submit_form():
 
     if not all([name, email, address, message]):
         flash('Todos los campos son obligatorios.', 'error')
-        return redirect(url_for('show_form'))
+        return redirect(url_for('form'))
 
     new_msg = ContactMessage(name=name, email=email, address=address, message=message)
     db.session.add(new_msg)
     db.session.commit()
 
     # Redirigir al formulario con parámetro para mostrar el popup de agradecimiento
-    return redirect(url_for('show_form', show_thanks=1))
+    return redirect(url_for('form', show_thanks=1))
 
 
 @app.route('/data-architecture')

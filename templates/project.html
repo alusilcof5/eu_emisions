@@ -1,61 +1,134 @@
 {% extends "layout.html" %}
 
-{% block title %}Acerca del Proyecto{% endblock %}
+{% block title %}Contacto{% endblock %}
 
-{% block header_title %}Acerca del proyecto{% endblock %}
-{% block header_subtitle %}Objetivos, motivaciones y resultados esperados{% endblock %}
-
-{% block content %}
-<main class="project-content">
-    <section class="intro">
-        <div class="intro__overlay">
-            
-        <img src="{{ url_for('static', filename='img/pacto.jpg') }}" alt="Pacto Verde Europeo" class="project-img"><br>
-        <h3>Pacto Verde Europeo</h3>
-        <p>
-            Este proyecto tiene como propósito evaluar la efectividad de las políticas ambientales adoptadas por los Estados miembros de la Unión Europea en el marco del Acuerdo de París y el Pacto Verde Europeo. Utilizamos datos históricos y técnicas de machine learning para proyectar tendencias de emisiones y generar recomendaciones basadas en evidencia.
-        </p>
-    </div>
-    </section>
-
-    <section class="objectives">
-        <h4>Objetivo General</h4>
-        <p>
-            Analizar, mediante una plataforma de análisis interactiva, la evolución de las emisiones de CO₂ en la UE y evaluar si los países están en camino de cumplir con sus compromisos climáticos para 2030 y 2050.
-        </p>
-
-        <h5>Objetivos Específicos</h5>
-        <ul>
-            <li>Visualizar tendencias de emisiones en un dashboard interactivo.</li>
-            <li>Implementar modelos predictivos para estimar emisiones futuras.</li>
-            <li>Evaluar el impacto de políticas climáticas en sectores clave: energía, transporte e industria.</li>
-            <li>Formular recomendaciones mediante simulaciones y benchmarking.</li>
-        </ul>
-    </section>
-
-    <section class="architecture">
-        <h5>Arquitectura Tecnológica</h5>
-        <p>La arquitectura del proyecto está basada ........ Esto permite escalar fácilmente el procesamiento de datos, almacenar históricos, entrenar modelos predictivos y visualizar resultados en dashboards interactivos.</p>
-    </section>
-
-    <section class="team">
-        <h4>Equipo de Trabajo</h4>
-        <ul>
-          <li><strong>Desarrolladora Fullstack:</strong> Integración de conocimientos en matemáticas, educación y desarrollo web. Enfocada actualmente en análisis de datos.</li>
-          <li><strong>Ingeniera en Energía y Mercados:</strong> Especialista en optimización de carteras, planificación estratégica y transición energética.</li>
-          <li><strong>Data Analyst & Customer Success:</strong> Desarrollo de relaciones institucionales y análisis de clientes en contextos tecnológicos y educativos.</li>
-          <li><strong>Responsable de Optimización de Procesos:</strong> Gestión administrativa, mejora de eficiencia operativa y aprovechamiento de datos en instituciones públicas.</li>
-        </ul>
-      </section>
-
-    <section class="impact">
-        <h4>Impacto Esperado</h4>
-        <p>
-            Los resultados generarán evidencia útil para diseñar políticas más efectivas y sostenibles. Además, se fomentará la transparencia mediante dashboards interactivos que faciliten la comprensión de datos complejos a públicos técnicos y no técnicos.
-        </p>
-    </section>
-</main>
-<div class="button__container">
-    <a href="/" class="btn" title="Volver"> ⬅ </a>
-  </div>
+{% block header_title %}
+  <span data-i18n="form_title">Formulario de contacto</span>
 {% endblock %}
+{% block header_subtitle %}
+  <span data-i18n="contact_us">Contáctanos</span>
+{% endblock %}
+{% block content %}
+
+<main>
+    <nav class="second_navbar">
+        <ul>
+            <li><a href="#resumen"><i class="fas fa-chart-line"></i> Resumen</a></li>
+            <li><a href="#objetivos"><i class="fas fa-bullseye"></i> Objetivos</a></li>
+            <li><a href="#metodologia"><i class="fas fa-cogs"></i> Metodología</a></li>
+            <li><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="section" id="resumen">
+            <h2><i class="fas fa-file-alt"></i> Resumen Ejecutivo</h2>
+            <p>
+                Este proyecto representa un análisis exhaustivo de la efectividad de las políticas climáticas implementadas en la Unión Europea durante el período crítico de 1990–2023. A través de metodologías avanzadas de análisis de datos, evaluamos el grado de cumplimiento de los compromisos establecidos en el Pacto Verde Europeo y el Acuerdo de París.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-globe-europe"></i>
+                    <h3>27</h3>
+                    <p>Países de la UE Analizados</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>33</h3>
+                    <p>Años de Datos Procesados</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-industry"></i>
+                    <h3>15</h3>
+                    <p>Sectores Económicos</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>2050</h3>
+                    <p>Meta: Neutralidad Climática</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="objetivos">
+            <h2><i class="fas fa-bullseye"></i> Objetivos del Proyecto</h2>
+            <p>
+                Nuestro enfoque multidisciplinario abarca desde el análisis macro-económico hasta la evaluación sectorial detallada, proporcionando una visión integral del progreso climático europeo.
+            </p>
+            <ul>
+                <li>Evaluar la evolución temporal de las emisiones de gases de efecto invernadero por país y sector económico</li>
+                <li>Cuantificar el impacto real de las políticas climáticas implementadas en los últimos 33 años</li>
+                <li>Identificar patrones y tendencias en la descarbonización de la economía europea</li>
+                <li>Desarrollar modelos predictivos para alcanzar la neutralidad climática en 2050</li>
+                <li>Proporcionar recomendaciones basadas en evidencia para optimizar políticas futuras</li>
+            </ul>
+        </section>
+
+        <section class="section" id="metodologia">
+            <h2><i class="fas fa-cogs"></i> Metodología y Arquitectura Tecnológica</h2>
+            <p>
+                Hemos diseñado una arquitectura tecnológica robusta y escalable que integra múltiples fuentes de datos y herramientas de análisis avanzado. La solución implementa un pipeline automatizado que garantiza la integridad y actualización continua de los datos.
+            </p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Procesamiento de Datos</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Power BI</h3>
+                    <p>Visualización Avanzada</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>SharePoint</h3>
+                    <p>Colaboración y Gestión</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Big Data</h3>
+                    <p>Análisis Masivo</p>
+                </div>
+            </div>
+            
+            <p>
+                La arquitectura modular permite el procesamiento eficiente de grandes volúmenes de datos climáticos, facilitando la extracción de insights accionables y la generación de reportes automatizados para stakeholders clave.
+            </p>
+        </section>
+
+        <section class="section" id="dashboard">
+            <h2><i class="fas fa-tachometer-alt"></i> Dashboard Analítico Interactivo</h2>
+            <p>
+                Nuestro dashboard de última generación ofrece una experiencia de usuario intuitiva y potente, permitiendo el análisis multidimensional de las emisiones desde tres perspectivas complementarias: global (UE), nacional y sectorial.
+            </p>
+            
+            <div class="dashboard-preview">
+                <h3><i class="fas fa-eye"></i> Visualización de Datos en Tiempo Real</h3>
+                <p>Explora patrones, tendencias y correlaciones a través de visualizaciones interactivas y dinámicas</p>
+            </div>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <a href="https://app.powerbi.com/links/GNYiXZjziJ" target="_blank" class="btn pulse">
+                    <i class="fas fa-external-link-alt"></i> 
+                    Acceder al Dashboard Completo
+                </a>
+            </div>
+            
+            <p>
+                El dashboard integra funcionalidades avanzadas como filtros dinámicos, comparaciones temporales, análisis de correlación y proyecciones futuras basadas en modelos predictivos. Ideal para investigadores, policymakers y analistas ambientales.
+            </p>
+        </section>
+    </div>
+
+    
+
+   {% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="{{ url_for('static', filename='data_script/project.js') }}"></script>
+{% endblock %}
+ 

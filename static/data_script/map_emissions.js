@@ -1,4 +1,4 @@
-const countryCodes = {
+/* const countryCodes = {
   "AT": "Austria", "BE": "Belgium", "BG": "Bulgaria", "CH": "Switzerland",
   "CY": "Cyprus", "CZ": "Czech Republic", "DE": "Germany", "DK": "Denmark",
   "EE": "Estonia", "ES": "Spain", "FI": "Finland", "FR": "France",
@@ -111,3 +111,4 @@ async function loadAndPlot(csvPath) {
 document.addEventListener('DOMContentLoaded', () => {
   loadAndPlot('data_template/emissions.csv');
 });
+ */
