@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
 :root {
   --bg-color: #f9f9f9;
   --text-color: #000000;
-  --accent-color: #356d0d;
+  --accent-color: #2E7D32;
   --btn-hover: #5da22c;
   --border-color: #5a9e37;
   --card-shadow: rgba(0, 0, 0, 0.1);
 
   --color-bg-light: #ffffff;
-  --color-primary: #356d0d;
+  --color-primary: #2E7D32;
   --color-primary-alt: #5a9e37;
   --color-primary-hover: #5da22c;
 
@@ -18,7 +16,7 @@
   --color-text-default: #1a1a1a;
   --color-white: #ffffff;
   --color-black: #000000;
-
+  --color-green: #2E7D32;
   --color-dark-gray: #2c2c2c;
   --color-light-gray: #f4f4f4;
   --color-mid-gray: #ccc;
@@ -26,10 +24,9 @@
   --color-border: #a8a8a8;
   --color-overlay: rgba(0, 0, 0, 0.6);
   --color-card-bg: #f9f9f9;
-  --color-green: #356d0d;
   --color-hover-green: #7ac943;
   --color-dark-text: #2b2a2a;
-  --color-footer-bg: #356d0d;
+  --color-footer-bg: #2E7D32;
   --color-navbar-hover: #555;
   --color-link: #333;
   --color-link-visited: #333;

@@ -10,43 +10,44 @@
 {% endblock %}
 {% block content %}
 
-<div class="project-content">
-  <h3 data-i18n="form_title">Formulario de contacto</h3>
-  <form action="{{ url_for('submit_form') }}" method="post" class="form" id="contact-form">
-    <div class="user">
-      <ul class="user-info">
-        <li class="user-info__item">
-          <label for="name" data-i18n="name_label">Su nombre</label>
-          <input type="text" name="name" id="name" placeholder="Introduzca su nombre completo" data-i18n-placeholder="name_placeholder" required>
-        </li>
-        <li class="user-info__item">
-          <label for="email" data-i18n="email_label">Su correo electrónico</label>
-          <input type="email" name="email" id="email" placeholder="Introduzca su correo electrónico" data-i18n-placeholder="email_placeholder" required>
-        </li>
-      </ul>
+<main>
+    <div class="container">
+        <div class="section">
+            <h2><i class="fas fa-envelope"></i> Formulario de contacto</h2>
+            <form action="{{ url_for('submit_form') }}" method="post" class="form" id="contact-form">
+                <ul class="user-info">
+                    <li class="user-info__item">
+                        <label for="name" data-i18n="name_label">Nombre</label>
+                        <input type="text" name="name" id="name" placeholder="Introduzca su nombre completo" data-i18n-placeholder="name_placeholder" required>
+                    </li>
+                    <li class="user-info__item">
+                        <label for="email" data-i18n="email_label">Correo electrónico</label>
+                        <input type="email" name="email" id="email" placeholder="Introduzca su correo electrónico" data-i18n-placeholder="email_placeholder" required>
+                    </li>
+                </ul>
 
-      <ul class="address-date">
-        <li class="user-info__item">
-          <label for="address" data-i18n="address_label">Especifique su dirección</label>
-          <input type="text" name="address" id="address" placeholder="Su dirección" data-i18n-placeholder="address_placeholder" required>
-        </li>
-        <li class="user-info__item">
-          <label for="message" data-i18n="message_label">Mensaje</label>
-          <textarea name="message" id="message" rows="5" placeholder="Escriba su mensaje aquí" data-i18n-placeholder="message_placeholder" required></textarea>
-        </li>
-      </ul>
+                <ul class="address-date">
+                    <li class="user-info__item">
+                        <label for="address" data-i18n="address_label">Código postal</label>
+                        <input type="text" name="address" id="address" placeholder="Su dirección" data-i18n-placeholder="address_placeholder" required>
+                    </li>
+                    <li class="user-info__item">
+                        <label for="message" data-i18n="message_label">Mensaje</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Escriba su mensaje aquí" data-i18n-placeholder="message_placeholder" required></textarea>
+                    </li>
+                </ul>
+                <button type="submit" class="btn" data-i18n="submit_button">Enviar</button>
+            </form>
+
+            <!-- Popup for success message -->
+            <div id="success-popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <span id="close-popup" class="close">×</span>
+                    <p data-i18n="success_message">¡Su mensaje ha sido enviado con éxito!</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="submit" class="button" data-i18n="submit_button">Enviar</button>
-  </form>
-
-  <!-- Popup for success message -->
-  <div id="success-popup" class="popup" style="display: none;">
-    <div class="popup-content">
-      <span id="close-popup" class="close">×</span>
-      <p data-i18n="success_message">¡Su mensaje ha sido enviado con éxito!</p>
-    </div>
-  </div>
-</div>
-
+</main>
 
 {% endblock %}

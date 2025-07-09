@@ -14,7 +14,7 @@
   
   .user-info,
   .address-date {
-    width: 30%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -42,7 +42,7 @@
   }
   
   label {
-    display: inline-block;
+    display: inline-blinputock;
     margin-bottom: 10px;
     font-size: 15px;
   }
@@ -128,6 +128,41 @@
   .close:hover {
     color: #ff0000;
   }
+
+  .form-group {
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+
+#success-popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+
   
   @keyframes fadeInSubtitle {
     from {
@@ -139,6 +174,8 @@
       transform: translateY(0);
     }
   }
+
+
   
   /* RESPONSIVE */
   @media screen and (max-width: 1024px) {

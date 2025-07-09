@@ -2,19 +2,24 @@
             const navbarLinks = document.querySelectorAll('.navbar ul li a');
             
             navbarLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({ 
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+    link.addEventListener('click', function(event) {
+        const targetId = this.getAttribute('href');
+        
+        // Solo prevenir si es un ID interno, como '#section1'
+        if (targetId.startsWith('#')) {
+            event.preventDefault();
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                targetSection.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
                 });
-            });
+            }
+        }
+    });
+});
+
 
             // Create floating particles
             function createParticles() {

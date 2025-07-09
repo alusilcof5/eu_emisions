@@ -4,7 +4,7 @@ import os
 import json
 import pandas as pd
 from dotenv import load_dotenv
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from models import db, ContactMessage
 from scripts import functionss as fss
 
@@ -89,7 +89,6 @@ def form():
     show_thanks = request.args.get('show_thanks') == '1'
     return render_template('form.html', show_thanks=show_thanks)
 
-
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
     name = request.form.get('name')
@@ -108,6 +107,22 @@ def submit_form():
     # Redirigir al formulario con parámetro para mostrar el popup de agradecimiento
     return redirect(url_for('form', show_thanks=1))
 
+@app.route('/send', methods=['POST'])
+def send():
+    # Recibe los datos del formulario en JSON (JS Fetch)
+    name = request.form.get('name')
+    email = request.form.get('email')
+    address = request.form.get('address')
+    message = request.form.get('message')
+
+    if not all([name, email, address, message]):
+        return jsonify({'status': 'error', 'message': 'Campos incompletos'}), 400
+
+    new_msg = ContactMessage(name=name, email=email, address=address, message=message)
+    db.session.add(new_msg)
+    db.session.commit()
+
+    return jsonify({'status': 'success'}), 200
 
 @app.route('/data-architecture')
 def data_architecture():
@@ -129,16 +144,13 @@ def general_data():
 def country_data():
     return render_template("data_template/country_data.html")
 
-
 @app.route('/datos-por-sector')
 def sector_data():
     return render_template('data_template/sector_data.html')
 
-
 @app.route('/data-visualization')
 def data_visualization():
     return render_template('data_template/data.html')
-
 
 # ------------------ Iniciar la app ------------------
 

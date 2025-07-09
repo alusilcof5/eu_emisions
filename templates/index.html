@@ -3,23 +3,13 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<main>
-  <h3 class="main__title">Selecciona un país</h3>
-  <ul class="list">
-    {% for country in countries %}
-    <li class="list__item">
-      <a href="/country/{{ country.code }}">
-        <img class="item__img" src="{{ url_for('static', filename='img/' + country.flag) }}" alt="{{ country.name }}">
-        <br>
-        <div class="card__content">
-          <span class="country__name">{{ country['name'] }}</span>
-<!-- <span class="country__co2">Emisiones: {{ country['emissions'] }} toneladas CO₂</span>
+<div class="container">
+    <h1>Bienvenido a la página de inicio</h1>
+    <p>Esta es una página de ejemplo para mostrar cómo se puede estructurar el contenido.</p>
+    <p>Utiliza las herramientas de desarrollo para inspeccionar los elementos y ver cómo se aplica el CSS.</p>
+    <p>Recuerda que puedes personalizar el estilo según tus necesidades.</p>
+    <p>¡Disfruta explorando!</p>
+</div>
 
-          <span class="country__co2">Emisiones: {{ country.emissions }} toneladas CO₂</span>
-        </div> -->
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</main>
+
 {% endblock %}

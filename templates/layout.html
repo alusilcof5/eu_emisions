@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_variables.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark_mode.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
@@ -42,15 +43,7 @@
     <li><a href="{{ url_for('about') }}" class="menu">Sobre Nosotros</a></li>
     <li><a href="{{ url_for('project') }}" class="menu">Acerca del proyecto</a></li>
     <li><a href="{{ url_for('form') }}" class="menu">Contacto</a></li>
-
     
-
-
-    <li>
-  <button id="darkModeToggle" class="text-2xl p-5 rounded-full">
-    <i id="darkModeIcon" class="fas fa-moon"></i>
-  </button>
-</li>
 
 
 </ul>
@@ -109,8 +102,8 @@
   {% block scripts %}
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
-    <script src="{{ url_for('static', filename='data/data_script/country_data.js') }}"></script>
-    <script src="{{ url_for('static', filename='data/data_script/general_data.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dark_mode.js') }}"></script>
+    
     {% endblock %}
 </body>
 </html>
