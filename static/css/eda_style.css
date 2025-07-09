@@ -1,0 +1,183 @@
+:root {
+    --title-color: #0d2a0f;
+    --primary-color: #114518;
+    --secondary-color: #2e7d32;
+    --background-color: #f0f7f0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: var(--title-color);
+}
+
+h3 {
+    color: var(--primary-color);
+}
+
+.justify {
+    text-align: justify;
+}
+
+
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-color);
+}
+
+.report-header {
+    border-bottom: 2px solid #e1e1e1;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.chart-figure {
+    margin: 40px 0;
+    padding: 20px;
+    background: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+}
+
+.chart-figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-style: italic;
+    margin-top: 10px;
+    color: #666;
+    text-align: center;
+}
+
+.report-footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 0.5em;
+    color: #666;
+    border-top: 1px solid #ddd;
+    padding: 15px 0;
+    background-color: white;
+}
+
+.badge {
+    background-color: var(--title-color);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    vertical-align: middle;
+}
+
+.eu-logo {
+    margin-right: 15px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    max-width: 60px;
+}
+
+.data-methodology summary {
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.data-methodology summary:hover {
+    color: var(--secondary-color);
+}
+
+.data-methodology {
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.section-intro {
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.comparison-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 5px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.conclusions, .data-quality {
+    margin-top: 40px;
+    padding: 20px;
+    background: #e8f5e9;
+    border-radius: 5px;
+}
+
+.clean-list {
+  list-style: none;       
+  padding-left: 0;        
+  margin: 0;              
+}
+
+
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 10px;
+    }
+    .eu-logo {
+        max-width: 40px;
+    }
+    .report-header {
+        padding-bottom: 15px;
+    }
+    .chart-figure {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    .report-meta {
+        font-size: 0.9em;
+    }
+}

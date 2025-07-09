@@ -1,0 +1,399 @@
+{% extends "layout.html" %}
+
+{% block title %}Emisiones Generales{% endblock %}
+
+{% block header_title %}Datos de emisiones totales{% endblock %}
+{% block header_subtitle %}.....{% endblock %}
+
+{% block content %}
+<main>
+  <div class="content-wrapper">
+    <header class="report-header">
+      <div class="header-content" style="display: flex; align-items: center;">
+        <!-- <div class="logo-container">
+          <img src="graficos/logo.png" alt="Logo UE" class="eu-logo">
+        </div> -->
+        <div>
+          <h1>Análisis de Emisiones GHG - Unión Europea</h1>
+          <p class="report-meta"><sub>Generado el: 2025-07-06 18:16 </sub></p>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2 id="viz-section">Presentación y Fuente</h2>
+        <p class="justify">Este análisis presenta una visión integral de las emisiones de gases de efecto invernadero
+          (GEI) en la Unión Europea, medidas en Gigagramos de CO₂ equivalente (Gg CO₂eq). Los datos provienen de la
+          Agencia Europea de Medio Ambiente (EEA) y abarcan el período 1990–2023, utilizando la clasificación
+          metodológica IPCC 2006.</p>
+        <p>AAunque la EEA dispone de registros desde años anteriores, el análisis se centra en el período posterior a
+          1990 por motivos de coherencia metodológica y calidad de la información, respaldado por:
+        <ul>
+          <li>La adopción más uniforme de la metodología IPCC 2006, aplicada sistemáticamente a partir de esa década.
+          </li>
+          <li>El proceso de digitalización y mejora de la disponibilidad de datos comparables entre los países miembros
+            desde 1990.</li>
+          <li>El marco regulatorio europeo, como el Reglamento (UE) nº 525/2013, que exige a los países presentar sus
+            informes de emisiones a partir de 1990 de forma sistemática.</li>
+        </ul>
+        </p>
+        <figcaption>European Environment Agency - EU Greenhouse Gas Inventory Report 2023. Aquí está el enlace directo
+          al informe oficial más reciente que detalla el período de datos analizados: <a
+            href="https://www.eea.europa.eu/publications/european-union-greenhouse-gas-inventory-2023">https://www.eea.europa.eu/publications/european-union-greenhouse-gas-inventory-2023</a>
+        </figcaption>
+
+        <section class="context-objectives">
+          <h2>Contexto y Objetivos del Informe</h2>
+          <p class="justify">El presente informe tiene como propósito ofrecer una visión detallada y comprensible de la
+            evolución de las emisiones de gases de efecto invernadero en la Unión Europea, con el objetivo de apoyar la
+            toma de decisiones estratégicas en materia de política ambiental y climática.</p>
+
+          <div class="key-insights">
+            <h4> Objetivos específicos del análisis:</h4>
+            <ul>
+              <li><strong>Identificar tendencias</strong> a largo plazo en las emisiones de GEI desde 1990 hasta 2023
+              </li>
+              <li><strong>Comparar las emisiones</strong> entre países y sectores clave para detectar los principales
+                emisores</li>
+              <li><strong>Detectar valores atípicos</strong> y anomalías en los datos reportados</li>
+              <li><strong>Evaluar el impacto</strong> de las políticas climáticas y energéticas en las emisiones</li>
+            </ul>
+          </div>
+
+          <p class="justify">Este análisis se fundamenta en datos oficiales de la Agencia Europea de Medio Ambiente
+            (EEA), garantizando la fiabilidad y trazabilidad de la información. La métrica utilizada, CO₂ equivalente
+            (CO₂eq), permite integrar distintos gases de efecto invernadero en una única medida comparable, facilitando
+            el análisis climático integral.</p>
+          <p class="justify">El informe se estructura en secciones que abordan la presentación y fuente de los datos, el
+            contexto y objetivos del análisis, la metodología empleada, las visualizaciones generadas, y las
+            conclusiones obtenidas. Cada sección está diseñada para proporcionar una comprensión clara y accesible de
+            los hallazgos, permitiendo a los lectores interpretar los resultados de manera efectiva.</p>
+        </section>
+
+
+        <summary>
+          <h3>Detalles de la Metodología</h3>
+        </summary>
+        <p>Los datos fueron procesados utilizando Python y las bibliotecas Pandas y Matplotlib. Se realizaron las
+          siguientes etapas:</p>
+        <ol>
+          <li>Lectura del archivo CSV con los datos de emisiones.</li>
+          <li>Filtrado de valores negativos y nulos en OBS_VALUE.</li>
+          <li>Cálculo de estadísticas descriptivas (media, mediana, desviación estándar, rango, IQR).</li>
+          <li>Generación de visualizaciones estáticas e interactivas para explorar la distribución de emisiones.</li>
+          <li>Análisis de correlaciones entre países y sectores.</li>
+        </ol>
+        <p>El análisis se centró en identificar patrones de emisiones, tendencias a lo largo del tiempo y la presencia
+          de
+          valores atípicos. Se utilizaron técnicas estadísticas robustas para manejar la alta variabilidad en los datos.
+          Las visualizaciones incluyen histogramas, diagramas de caja, series temporales y mapas de calor.</p>
+        <p>Para más detalles sobre la metodología y el código utilizado, consulte el archivo (<a
+            href="img/eda/code_analysis.py">code_analysis.py</a>).</p>
+        </details>
+      </section>
+
+
+      <h3>Captura de Carbono</h3>
+      <p>La captura de carbono es una tecnología clave en la lucha contra el cambio climático. En la Unión Europea,
+        se han implementado varios proyectos de captura y almacenamiento de carbono que han permitido reducir las
+        emisiones netas de CO2. A continuación, se presentan algunos datos relevantes:</p>
+      <ul>
+        <li><strong>Proyectos en operación:</strong> 15 proyectos de captura de carbono en diferentes sectores.</li>
+        <li><strong>Capacidad total de captura:</strong> 5 millones de toneladas de CO2 al año.</li>
+        <li><strong>Emisiones evitadas:</strong> 2 millones de toneladas de CO2 desde 1990.</li>
+      </ul>
+      <div class="interpretation">
+        <p class="justify">Las tecnologías de captura y almacenamiento de carbono (CCS) han mostrado eficacia en la
+          reducción de emisiones netas de CO₂. No obstante, para alcanzar los objetivos climáticos a largo plazo de
+          la UE, es necesario ampliar su adopción mediante mayores inversiones y políticas de fomento tecnológico.
+        </p>
+      </div>
+      </section>
+      <div class="interpretation">
+        <p><strong>Nota:</strong> La utilización de fuentes oficiales como la Agencia Europea de Medio Ambiente (EEA)
+          aporta solidez y trazabilidad a los datos. La métrica CO₂ equivalente (CO₂eq) permite integrar distintos
+          gases de efecto invernadero en una única medida comparable, facilitando el análisis climático integral.</p>
+
+        </section>
+
+        <div class="container">
+          <h2><u>Análisis exploratorio de datos de Emisiones GHG en Europa (1990-2023)</u></h2>
+        </div>
+        <section>
+          <h2 id="summary-section">Datos generales</h2>
+          <p>El dataset analizado contiene información sobre emisiones de gases de efecto invernadero con:</p>
+          <ul>
+            <li><strong>Total de registros:</strong> 629,220</li>
+            <li><strong>Total de columnas:</strong> 14</li>
+            <li><strong>Columnas numéricas:</strong> Year, emissions, PublicationDate</li>
+            <li><strong>Valores nulos:</strong>
+              <ul>
+                <li><strong>emissions:</strong> 247,076 registros nulos</li>
+                <li><strong>Notation:</strong> 402,129 registros nulos</li>
+                <li><strong>Parent_sector_code:</strong> 18,970 registros nulos</li>
+              </ul>
+
+
+            </li>
+            <li>Se detectaron valores negativos en <strong>emissions</strong>, incluyendo un mínimo de -469,887.40 Gg,
+              lo que indica posibles ajustes metodológicos o errores de reporte.</li>
+            <li><strong>Rango temporal:</strong> de 1990 a 2023</li>
+            <li><strong>Métrica de emisiones:</strong> Gigagramos (Gg) de CO₂ equivalente</li>
+            <li><strong>Fuente de datos:</strong> Agencia Europea de Medio Ambiente (EEA)</li>
+            <li><strong>Formato de reporte:</strong> IPCC Common Reporting Format</li>
+          </ul>
+          <p>El conjunto de datos contiene información detallada sobre emisiones de gases de efecto invernadero en
+            Europa. Las columnas incluidas son:</p>
+          <ul>
+            <li><strong>Country_code:</strong> Código ISO de dos letras para el país (por ejemplo, "CZ" para Czechia).
+            </li>
+            <li><strong>Country:</strong> Nombre del país europeo.</li>
+            <li><strong>Format_name:</strong> Formato de reporte usado, en este caso "IPCC Common Reporting Format".
+            </li>
+            <li><strong>Pollutant_name:</strong> Nombre del gas contaminante (por ejemplo, CO₂, CH₄, N₂O).</li>
+            <li><strong>Sector_code:</strong> Código del sector de reporte conforme a la metodología IPCC (por ejemplo,
+              "4.B.2").</li>
+            <li><strong>Sector_name:</strong> Descripción completa del sector o subsector (por ejemplo, "Land converted
+              to cropland").</li>
+            <li><strong>Parent_sector_code:</strong> Código del sector padre dentro de la jerarquía IPCC (puede estar
+              vacío).</li>
+            <li><strong>Unit:</strong> Unidad de medida, consistentemente en Gigagramos (Gg).</li>
+            <li><strong>Year:</strong> Año del reporte de emisiones (desde 1990 hasta 2023).</li>
+            <li><strong>emissions:</strong> Valor de las emisiones en Gg de CO₂ equivalente. Contiene valores nulos y
+              algunos negativos.</li>
+            <li><strong>Notation:</strong> Notación adicional del dato (por ejemplo, "NO" para "Not Occurring").</li>
+            <li><strong>PublicationDate:</strong> Fecha de publicación del reporte (en formato AAAAMMDD).</li>
+            <li><strong>DataSource:</strong> Fuente oficial del dato, que en este caso es "EEA".</li>
+            <li><strong>Country_code_3:</strong> Código ISO de tres letras del país (por ejemplo, "CZE").</li>
+          </ul>
+
+
+        </section>
+        <section id="summary-section">
+          <h2>Estadísticas Descriptivas</h2>
+          <p>Las estadísticas descriptivas de las emisiones (OBS_VALUE) son las siguientes:</p>
+          <table border="1" class="dataframe">
+            <thead>
+              <tr>
+                <th>Métrica</th>
+                <th>Valor</th>
+              </tr>
+              <tr>
+                <td>Recuento</td>
+                <td>382,144 registros</td>
+              </tr>
+              <tr>
+                <td>Media</td>
+                <td>8,259.72 Gg</td>
+              </tr>
+              <tr>
+                <td>Desviación Std</td>
+                <td>102,808.58 Gg</td>
+              </tr>
+              <tr>
+                <td>Mínimo</td>
+                <td>-469,887.40 Gg</td>
+              </tr>
+              <tr>
+                <td>Q1 (25%)</td>
+                <td>0.186 Gg</td>
+              </tr>
+              <tr>
+                <td>Mediana (Q2)</td>
+                <td>19.36 Gg</td>
+              </tr>
+              <tr>
+                <td>Q3 (75%)</td>
+                <td>608.30 Gg</td>
+              </tr>
+              <tr>
+                <td>Máximo</td>
+                <td>4,872,571.00 Gg</td>
+              </tr>
+          </table>
+          <section aria-labelledby="viz-section">
+            <h2 id="viz-section">Visualizaciones Clave</h2>
+            <p>Las siguientes visualizaciones muestran la distribución de las emisiones, comparativas entre países y un
+              análisis de tendencias a lo largo del tiempo.</p>
+            <p>Se han generado gráficos estáticos e interactivos para facilitar la exploración de los datos.</p>
+          </section>
+
+          <figure class="chart-figure">
+            <h3>Distribución de Emisiones</h3>
+            <img src="/static/img/eda/histograma_obs_value.png"
+              alt="Histograma mostrando distribución de emisiones en Gg CO2 equivalentes"
+              aria-describedby="fig1-caption">
+            <figcaption id="fig1-caption">Figura 1: Distribución logarítmica de valores de emisión</figcaption>
+            <iframe src="/static/img/eda/histograma_interactivo.html" width="100%" height="400px" frameborder="0"
+              aria-label="Histograma interactivo de emisiones"></iframe>
+            <div class="interpretation">
+              <p class="justify"><strong>Interpretación:</strong> El histograma en escala logarítmica revela una
+                distribución fuertemente sesgada hacia la derecha, con muchas observaciones concentradas en valores
+                bajos y una larga cola hacia valores altos. Esto se refleja en una media (9,499.675 Gg CO2eq) mucho
+                mayor que la mediana (444.2852 Gg CO2eq) y una alta desviación estándar (50,110.73 Gg CO2eq), indicando
+                que un pequeño grupo de países o sectores genera emisiones significativamente elevadas. La presencia de
+                981 outliers (con valores Z &gt; 3) justifica la aplicación de técnicas estadísticas robustas.</p>
+              <p><strong>Nota:</strong> La escala logarítmica fue esencial para visualizar la densidad y la distribución
+                de las emisiones de CO2, ya que permitió manejar el amplio rango de valores, desde emisiones muy bajas
+                hasta máximos extremos (1,288,425 Gg CO2eq).</p>
+            </div>
+          </figure>
+
+          <figure class="chart-figure">
+            <h3>Comparativa por País</h3>
+            <img src="/static/img/eda/boxplot_obs_value_pais.png" alt="Diagrama de caja por países"
+              aria-describedby="fig2-caption">
+            <figcaption id="fig2-caption">Figura 2: Rangos de emisión por nación (Gg CO2)</figcaption>
+            <div class="interpretation">
+              <p class="justify"><strong>Interpretación:</strong> El diagrama de caja muestra la distribución de
+                emisiones para los 10 principales países emisores, destacando la variabilidad y los valores atípicos
+                (2,703 detectados con Z &gt; 3). Países como Alemania, con las mayores emisiones promedio, presentan
+                cajas más anchas y bigotes largos, reflejando una gran dispersión. Este gráfico subraya la necesidad de
+                estrategias de reducción específicas para países con emisiones altas y variables.</p>
+            </div>
+          </figure>
+
+          <figure class="chart-figure">
+            <h3>Evolución Temporal</h3>
+            <img src="/static/img/eda//serie_temporal_emissions.png" alt="Tendencias anuales de emisiones"
+              aria-describedby="fig3-caption">
+            <figcaption id="fig3-caption">Figura 3: Cambios en emisiones promedio (1990-2023)</figcaption>
+            <iframe src="/static/img/eda//serie_temporal_interactiva.html" width="100%" height="400px" frameborder="0"
+              aria-label="Serie temporal interactiva de emisiones"></iframe>
+            <div class="interpretation">
+              <p class="justify"><strong>Interpretación:</strong> La serie temporal muestra una tendencia decreciente en
+                las emisiones promedio de la UE desde 1990 hasta 2023, probablemente impulsada por políticas climáticas
+                como el uso de energías renovables y la captura de carbono. Las fluctuaciones interanuales pueden
+                reflejar cambios económicos o eventos como la crisis de 2008 o la pandemia de COVID-19. Este gráfico
+                resalta la efectividad de las políticas climáticas, pero sugiere la necesidad de acelerar las
+                reducciones para cumplir con los objetivos de neutralidad de carbono.</p>
+            </div>
+          </figure>
+
+          <figure class="chart-figure">
+            <h3>Matriz de Correlación de Emisiones</h3>
+            <img src="/static/img/eda//heatmap_correlacion.png" alt="Mapa de calor de correlaciones entre países"
+              aria-describedby="fig4-caption">
+            <figcaption id="fig4-caption">Figura 4: Correlación de emisiones entre países europeos (valores cercanos a 1
+              indican patrones similares, -1 indican patrones opuestos)</figcaption>
+            <div class="interpretation">
+              <p class="justify"><strong>Interpretación:</strong> El mapa de calor revela correlaciones significativas
+                entre las trayectorias anuales de emisiones de gases de efecto invernadero (GHG) de distintos países de
+                la UE. Correlaciones fuertes como las de Chequia y Eslovaquia, Bélgica y Suecia, o Alemania y Polonia,
+                indican historias industriales o políticas climáticas compartidas. En contraste, correlaciones negativas
+                como la de Alemania y Malta reflejan trayectorias opuestas. Estos hallazgos pueden orientar la
+                cooperación regional o estrategias diferenciadas de mitigación.</p>
+            </div>
+          </figure>
+
+          <figure class="chart-figure">
+            <h3>Análisis de Valores Atípicos</h3>
+            <img src="/static/img/eda//outliers_analysis.png" alt="Distribución de valores atípicos"
+              aria-describedby="fig5-caption">
+            <figcaption id="fig5-caption">Figura 5: Países con mayor presencia de valores extremos</figcaption>
+            <div class="interpretation">
+              <p class="justify"><strong>Interpretación:</strong> Este gráfico identifica 2,703 valores atípicos (Z &gt;
+                3), principalmente en países como Alemania, donde se concentran las mayores emisiones absolutas. Estos
+                extremos pueden estar asociados a eventos puntuales o sectores muy intensivos en carbono. La eliminación
+                de 15,682 valores negativos adicionales refuerza la importancia de una limpieza cuidadosa de los datos.
+                Este análisis destaca la necesidad de entender mejor la fuente y el contexto de estos valores extremos.
+              </p>
+            </div>
+          </figure>
+
+          <figure class="chart-figure">
+            <h3>Dispersión de Emisiones</h3>
+            <img src="/static/img/eda//scatter_plot.png" alt="Dispersión de emisiones por año y país"
+              aria-describedby="fig6-caption">
+            <figcaption id="fig6-caption">Figura 6: Relación entre emisiones, años y países</figcaption>
+            <div class="interpretation">
+              <p class="justify"><strong>Interpretación:</strong> El diagrama de dispersión muestra las emisiones
+                anuales por país, revelando una alta variabilidad en magnitudes. Países como Alemania aparecen en
+                niveles elevados y estables, mientras que países más pequeños, como Malta o Chipre, se ubican en niveles
+                bajos. La tendencia descendente general respalda los resultados observados en la serie temporal,
+                sugiriendo la efectividad de las políticas climáticas implementadas.</p>
+            </div>
+          </figure>
+
+
+          <section class="comparison-section">
+            <h2>Comparación Regional</h2>
+            <div class="comparison-grid">
+              <figure class="chart-figure">
+                <h3>Emisiones Norte vs Sur</h3>
+                <img src="/static/img/eda//comparacion_regional.png" alt="Comparación entre regiones europeas"
+                  aria-describedby="fig7-caption">
+                <figcaption id="fig7-caption">Figura 7: Comparativa de emisiones entre regiones norte y sur</figcaption>
+                <div class="interpretation">
+                  <p class="justify"><strong>Interpretación:</strong> Este gráfico compara las emisiones entre los
+                    países del norte (Dinamarca, Finlandia y Suecia) y del sur de Europa (España, Italia, Portugal y Grecia),
+                    revelando diferencias sustanciales tanto en magnitud como en dispersión. Los países nórdicos, con
+                    una mayor adopción temprana de energías renovables —como la hidráulica en Suecia—, muestran niveles de
+                    emisiones más bajos y estables a lo largo del tiempo, reflejo de políticas de descarbonización
+                    implementadas desde los años noventa. En cambio, los países del sur presentan emisiones medianas más
+                    altas y una mayor variabilidad interanual, posiblemente vinculada a una dependencia más prolongada
+                    de combustibles fósiles y a una estructura energética más centrada en el transporte por carretera.
+                    Aunque ambas regiones exhiben una tendencia decreciente en sus emisiones desde 1990, el ritmo y la
+                    consistencia de la reducción son más marcados en el norte. Esta comparación resalta la necesidad de diseñar
+                    estrategias climáticas diferenciadas, adaptadas al contexto económico, tecnológico y estructural de
+                    cada región, evitando enfoques homogéneos que ignoren las particularidades territoriales dentro de la
+                    Unión
+                    Europea.</p>
+                </div>
+              </figure>
+
+              <figure class="chart-figure">
+                <h3>Evolución Países Nórdicos</h3>
+                <img src="/static/img/eda//nordicos_evolucion.png" alt="Tendencias en países nórdicos"
+                  aria-describedby="fig8-caption">
+                <figcaption id="fig8-caption">Figura 8: Tendencias de emisiones en países nórdicos</figcaption>
+                <div class="interpretation">
+                  <p class="justify"><strong>Interpretación:</strong> Este gráfico muestra una disminución constante en
+                    las
+                    emisiones de los países nórdicos (p. ej., Suecia, Dinamarca) desde 1990, probablemente debido a la
+                    adopción temprana de energías renovables y políticas climáticas estrictas. Las altas correlaciones
+                    (p.
+                    ej., Dinamarca-Suecia: 0,972216) sugieren patrones similares entre estos países. El gráfico destaca
+                    a
+                    los países nórdicos como líderes en reducción de emisiones, ofreciendo un modelo para otras regiones
+                    de
+                    la UE mediante la inversión en tecnologías limpias.</p>
+                </div>
+              </figure>
+            </div>
+          </section>
+
+          <section class="conclusions">
+            <h2>Conclusiones</h2>
+            <ul>
+              <li>Se detectaron 2,703 valores atípicos en Emisiones que requieren investigación adicional.</li>
+              <li>El país con mayores emisiones promedio es Alemania.</li>
+              <li>La tendencia general de emisiones es decreciente desde 1990.</li>
+              <li>Se filtraron 15,682 valores negativos en Emisiones, posiblemente debido a errores de datos o ajustes
+                por
+                captura de carbono.</li>
+            </ul>
+          </section>
+    </main>
+
+    <footer class="report-footer">
+      <p>Generado automáticamente con Python | 2025-07-07 22:45</p>
+      <br>
+      <section>
+        <ul class="clean-list">
+          <li><strong>Fuente de datos:</strong> European Environment Agency (EEA)</li>
+          <li><strong>Última actualización:</strong> July 2025</li>
+          <li><strong>Métrica:</strong> Emisiones brutas (inventario nacional)</li>
+        </ul>
+      </section>
+    </footer>
+  </div>
+
+  
+</main>
+{% endblock %}
+
+{% block scripts %}
+  <script src="https://cdn.plot.ly/plotly-2.30.0.min.js"></script>
+  <script src="{{ url_for('static', filename='data_script/general_data.js') }}"></script>
+{% endblock %}

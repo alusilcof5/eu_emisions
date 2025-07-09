@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_variables.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dark_mode.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/eda_style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
 
@@ -35,7 +36,7 @@
     <ul class="dropdown-content">
         <li><a href="{{ url_for('general_data') }}">Datos generales</a></li>
         <li><a href="{{ url_for('country_data') }}">Datos por país</a></li>
-        <li><a href="{{ url_for('sector_data') }}">Datos por sector</a></li>
+        <li><a href="{{ url_for('sector_data') }}">EDA</a></li>
         
     </ul>
 </li>
@@ -94,7 +95,14 @@
       <p class="paragraph">El contenido no debe ser reutilizado con fines comerciales sin autorización expresa.</p>
     </div>
   </div>
+<!-- Aquí va el chatbot popup de Zapier -->
+  <div class="chatbot-container">
+    <script async type="module"
+      src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"></script>
 
+    <zapier-interfaces-chatbot-embed is-popup="true"
+      chatbot-id="cmctsamkq0009jx6eq5pbe4to"></zapier-interfaces-chatbot-embed>
+  </div>
   
         
 
