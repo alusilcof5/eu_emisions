@@ -1,5 +1,5 @@
 document.getElementById('contact-form').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); // Evitar el envío predeterminado del formulario
     const form = event.target;
     const formData = new FormData(form);
 
@@ -10,10 +10,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
         });
 
         if (response.ok) {
-            // Show popup
+            // Mostrar el pop-up
             const popup = document.getElementById('success-popup');
             popup.style.display = 'flex';
-            // Reset form
+            // Reiniciar el formulario
             form.reset();
         } else {
             alert('Hubo un error al enviar el formulario. Por favor, intenta de nuevo.');
@@ -23,12 +23,12 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     }
 });
 
-// Close popup when clicking the close button
+// Cerrar el pop-up al hacer clic en el botón de cerrar
 document.getElementById('close-popup').addEventListener('click', function() {
     document.getElementById('success-popup').style.display = 'none';
 });
 
-// Close popup when clicking outside the popup content
+// Cerrar el pop-up al hacer clic fuera del contenido del pop-up
 document.getElementById('success-popup').addEventListener('click', function(event) {
     if (event.target === this) {
         this.style.display = 'none';

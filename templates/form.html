@@ -3,7 +3,7 @@
 {% block title %}Contacto{% endblock %}
 
 {% block header_title %}
-  <span data-i18n="form_title">Formulario de contacto</span>
+  <span data-i18n="form_title">Espacio de contacto</span>
 {% endblock %}
 {% block header_subtitle %}
   <span data-i18n="contact_us">Contáctanos</span>
@@ -11,43 +11,38 @@
 {% block content %}
 
 <main>
-    <div class="container">
+    <div class="containers">
         <div class="section">
-            <h2><i class="fas fa-envelope"></i> Formulario de contacto</h2>
-            <form action="{{ url_for('submit_form') }}" method="post" class="form" id="contact-form">
-                <ul class="user-info">
-                    <li class="user-info__item">
-                        <label for="name" data-i18n="name_label">Nombre</label>
-                        <input type="text" name="name" id="name" placeholder="Introduzca su nombre completo" data-i18n-placeholder="name_placeholder" required>
-                    </li>
-                    <li class="user-info__item">
-                        <label for="email" data-i18n="email_label">Correo electrónico</label>
-                        <input type="email" name="email" id="email" placeholder="Introduzca su correo electrónico" data-i18n-placeholder="email_placeholder" required>
-                    </li>
-                </ul>
+            <div class="container">
+    <div class="section">
+        <h2><i class="fas fa-envelope"></i> Formulario de contacto</h2>
+        <form action="{{ url_for('submit_form') }}" method="post" class="form" id="contact-form">
+            <ul class="user-info">
+                <li class="user-info__item">
+                    <label for="name" data-i18n="name_label">Nombre</label>
+                    <input type="text" name="name" id="name" placeholder="Introduzca su nombre completo" data-i18n-placeholder="name_placeholder" required>
+                </li>
+                <li class="user-info__item">
+                    <label for="email" data-i18n="email_label">Correo Electrónico</label>
+                    <input type="email" name="email" id="email" placeholder="Introduzca su correo electrónico" data-i18n-placeholder="email_placeholder" required>
+                </li>
+                <li class="user-info__item">
+                    <label for="message" data-i18n="message_label">Mensaje</label>
+                    <textarea name="message" id="message" placeholder="Escriba su mensaje aquí" data-i18n-placeholder="message_placeholder" required></textarea>
+                </li>
+            </ul>
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </form>
+        <!-- Pop-up de éxito -->
+<div id="success-popup" style="display: none;" class="popup-overlay">
+  <div class="popup-content">
+    <span id="close-popup" class="popup-close">&times;</span>
+    <h3>¡Mensaje enviado con éxito!</h3>
+    <p>Gracias por contactarnos. Te responderemos pronto.</p>
+  </div>
+</div>
 
-                <ul class="address-date">
-                    <li class="user-info__item">
-                        <label for="address" data-i18n="address_label">Código postal</label>
-                        <input type="text" name="address" id="address" placeholder="Su dirección" data-i18n-placeholder="address_placeholder" required>
-                    </li>
-                    <li class="user-info__item">
-                        <label for="message" data-i18n="message_label">Mensaje</label>
-                        <textarea name="message" id="message" rows="5" placeholder="Escriba su mensaje aquí" data-i18n-placeholder="message_placeholder" required></textarea>
-                    </li>
-                </ul>
-                <button type="submit" class="btn" data-i18n="submit_button">Enviar</button>
-            </form>
-
-            <!-- Popup for success message -->
-            <div id="success-popup" class="popup" style="display: none;">
-                <div class="popup-content">
-                    <span id="close-popup" class="close">×</span>
-                    <p data-i18n="success_message">¡Su mensaje ha sido enviado con éxito!</p>
-                </div>
-            </div>
-        </div>
     </div>
-</main>
+</div>
 
 {% endblock %}

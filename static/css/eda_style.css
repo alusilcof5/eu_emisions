@@ -17,6 +17,11 @@ h1, h2 {
     color: var(--title-color);
 }
 
+.justify {
+    font-size: smaller;
+}
+
+
 h3 {
     color: var(--primary-color);
 }
@@ -65,7 +70,7 @@ figcaption {
 .report-footer {
     margin-top: 50px;
     text-align: center;
-    font-size: 0.5em;
+    font-size: 0.85em;
     color: #666;
     border-top: 1px solid #ddd;
     padding: 15px 0;
@@ -153,7 +158,14 @@ th {
   margin: 0;              
 }
 
+body {
+    font-size: 1.2rem; /* Adjust the base font size */
+}
 
+
+.report-meta {
+    font-size: 0.8rem; /* Smaller size for report metadata */
+}
 
 @media (max-width: 768px) {
     .content-wrapper {
