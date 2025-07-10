@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/data_variables.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark_mode.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/eda_style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/png">
+    <script src="project.js" defer></script>
+
 </head>
 <body>
     <nav class="navbar">
@@ -46,10 +47,10 @@
 
     <header class="header">
         <div class="header__text">
-            <h1>{% block page_header_title %}Emisiones de CO₂{% endblock %}</h1>
+            <h1>{% block page_header_title %}Cumplimiento Climático de la UE{% endblock %}</h1>
         </div>
         <div>
-            <p class="paragraph">{% block page_header_subtitle %}Consulta y compara la huella de carbono{% endblock %}</p>
+            <p class="paragraph">{% block page_header_subtitle %}Tendencias y Desafíos en la Reducción de Emisiones{% endblock %}</p>
         </div>
     </header>
 
@@ -95,7 +96,9 @@
     {% block scripts %}
         <script src="{{ url_for('static', filename='js/script.js') }}"></script>
         <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/dark_mode.js') }}"></script>
+       
+    
+
     {% endblock %}
 </body>
 </html>

@@ -164,8 +164,11 @@ body {
 
 
 .report-meta {
-    font-size: 0.8rem; /* Smaller size for report metadata */
+    font-size: 0.8rem; 
+    text-align: center;
+
 }
+
 
 @media (max-width: 768px) {
     .content-wrapper {

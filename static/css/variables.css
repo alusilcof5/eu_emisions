@@ -41,13 +41,3 @@
   --font-main: 'Montserrat', sans-serif;
 }
 
-body.dark-mode {
-  --bg-color: #2c2c2c;
-  --text-color: #e2e2e2;
-  --accent-color: #7ac943;
-  --btn-hover: #a3ea63;
-  --border-color: #4d9b1a;
-  --card-shadow: rgba(255, 255, 255, 0.1);
-
-  --font-main: 'Montserrat', sans-serif;
-}
