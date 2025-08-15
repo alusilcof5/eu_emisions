@@ -1,5 +1,3 @@
-# main.py
-
 import os
 import json
 import pandas as pd
@@ -22,8 +20,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Inicializar la base de datos con la app
 db.init_app(app)
 
-# Ruta al CSV
-CSV_PATH = 'static/package/data_world_countries.csv'
+# --------- Rutas seguras (BASE_DIR) ---------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+CSV_PATH = os.path.join(BASE_DIR, "static", "package", "data_world_countries.csv")
+JSON_PATH = os.path.join(BASE_DIR, "static", "json", "emisiones_co2.json")
 
 # Cargar el CSV (si existe)
 try:
@@ -34,7 +35,7 @@ except Exception as e:
 
 # Configurar carpeta de plantillas según el idioma
 def set_template_folder(lang):
-    base_path = os.path.abspath('.')
+    base_path = os.path.abspath(BASE_DIR)
     if lang == 'en':
         app.jinja_loader.searchpath = [os.path.join(base_path, 'templates_en')]
     else:
@@ -49,7 +50,7 @@ def before_request():
 
 @app.route('/')
 def index():
-    with open('static/json/emisiones_co2.json', 'r') as f:
+    with open(JSON_PATH, 'r') as f:
         countries = json.load(f)
     return render_template('index.html', countries=countries)
 
@@ -63,7 +64,7 @@ def project():
 
 @app.route('/country/<country_code>')
 def country_details(country_code):
-    with open('static/json/emisiones_co2.json', 'r') as f:
+    with open(JSON_PATH, 'r') as f:
         countries = json.load(f)
 
     country = next((c for c in countries if c['code'] == country_code), None)
@@ -104,12 +105,10 @@ def submit_form():
     db.session.add(new_msg)
     db.session.commit()
 
-    # Redirigir al formulario con parámetro para mostrar el popup de agradecimiento
     return redirect(url_for('form', show_thanks=1))
 
 @app.route('/send', methods=['POST'])
 def send():
-    # Recibe los datos del formulario en JSON (JS Fetch)
     name = request.form.get('name')
     email = request.form.get('email')
     address = request.form.get('address')

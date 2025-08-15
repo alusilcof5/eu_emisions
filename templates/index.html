@@ -3,13 +3,88 @@
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Bienvenido a la página de inicio</h1>
-    <p>Esta es una página de ejemplo para mostrar cómo se puede estructurar el contenido.</p>
-    <p>Utiliza las herramientas de desarrollo para inspeccionar los elementos y ver cómo se aplica el CSS.</p>
-    <p>Recuerda que puedes personalizar el estilo según tus necesidades.</p>
-    <p>¡Disfruta explorando!</p>
-</div>
 
+</head>
+<body>
+  <section class="hero">
+    <h1>Reduzcamos juntos las emisiones de carbono</h1>
+    <p>EMI te ayuda a medir, gestionar y reducir tu huella de carbono.</p>
+    <a href="#calculator" class="cta-button">Calcula tu huella</a>
+  </section>
+  <section id="calculator" class="calculator">
+    <h2>Calculadora de Huella de Carbono</h2>
+    <form id="carbonForm" onsubmit="calculateCarbonFootprint(event)">
+      <label for="electricity">Consumo de electricidad (kWh/año):</label>
+      <input type="number" id="electricity" name="electricity" min="0" required>
+      <label for="gasoline">Gasolina consumida (litros/año):</label>
+      <input type="number" id="gasoline" name="gasoline" min="0" required>
+      <label for="beef">Carne de res consumida (kg/año):</label>
+      <input type="number" id="beef" name="beef" min="0" required>
+      <label for="pork">Carne de cerdo consumida (kg/año):</label>
+      <input type="number" id="pork" name="pork" min="0" required>
+      <label for="chicken">Carne de pollo consumida (kg/año):</label>
+      <input type="number" id="chicken" name="chicken" min="0" required>
+      <label for="vegetables">Comida vegetal (verduras, legumbres, etc.) (kg/año):</label>
+      <input type="number" id="vegetables" name="vegetables" min="0" required>
+      <label for="transport">Kilómetros recorridos en transporte (km/año):</label>
+      <input type="number" id="transport" name="transport" min="0" required>
+      <button type="submit">Calcular</button>
+    </form>
+    <div id="result"></div>
+  </section>
+  <section class="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq-item">
+      <div class="faq-question">Electricidad (kWh)</div>
+      <div class="faq-answer">
+        <p><strong>¿Por qué importa?</strong> Generar electricidad (especialmente con carbón, gas natural o petróleo) emite CO₂. La electricidad que usas en casa para iluminación, electrodomésticos, calefacción o aire acondicionado contribuye a tu huella.</p>
+        <p><strong>Impacto:</strong> Varía mucho según la fuente energética de tu país. Si viene de renovables, el impacto es bajo; si viene de carbón, puede ser muy alto.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Gasolina (litros)</div>
+      <div class="faq-answer">
+        <p><strong>¿Por qué importa?</strong> El transporte basado en combustibles fósiles (coches, motos) es una de las mayores fuentes de emisiones para un individuo. Cada litro de gasolina quemado emite CO₂ directamente.</p>
+        <p><strong>Impacto:</strong> Muy alto en personas que usan coche propio frecuentemente.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Alimentación (kg de alimentos)</div>
+      <div class="faq-answer">
+        <p><strong>¿Por qué importa?</strong> La producción de alimentos genera emisiones: deforestación, fertilizantes, metano del ganado, transporte, procesamiento.</p>
+        <p><strong>¿Por qué carne vs vegetal?</strong></p>
+        <ul>
+          <li><strong>Carne de res:</strong> Muy alta huella (metano, uso de tierra y agua).</li>
+          <li><strong>Cerdo y pollo:</strong> Menor que la res, pero aún considerable.</li>
+          <li><strong>Vegetales y legumbres:</strong> Mucho menor impacto.</li>
+        </ul>
+        <p><strong>Impacto:</strong> La dieta representa entre un 10-30% de la huella de carbono de una persona, según el país y hábitos.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Transporte (km)</div>
+      <div class="faq-answer">
+        <p><strong>¿Por qué importa?</strong> El transporte, especialmente en vehículos de combustión o aviones, genera grandes cantidades de CO₂. Los aviones son muy intensivos en carbono por pasajero, sobre todo en clase business y en viajes largos.</p>
+        <p><strong>Impacto:</strong> Pocas personas viajan mucho, pero quienes lo hacen, pueden generar más CO₂ solo con eso que con todo lo demás junto.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+   <h3 class="subtitle">Visualización interactiva desde la EEA</h3>
+  <script type='module' src='https://tableau-public.discomap.eea.europa.eu/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+  <div class="tableau-container" style="margin-top: 1.5rem;">
+    <tableau-viz
+      id='tableau-viz'
+      src='https://tableau-public.discomap.eea.europa.eu/views/GHGDataViewer/Totals'
+      width='100%'
+      height='1000'
+      hide-tabs
+      toolbar='bottom'
+      device='desktop'>
+    </tableau-viz>
+  </div>
+  </section>
+  <script src="./static/js/index.js"></script>
+  
 
 {% endblock %}
